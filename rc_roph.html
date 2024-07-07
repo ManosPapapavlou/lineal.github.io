@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            
+
+            <li class="nav-item">
+                <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Applications</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="rc_roph.html" class="active">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="syntheta_elasmata.html" >
+                            <i class="bi bi-circle"></i><span>Σύνθετα Ελάσματα</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="syntheta_ufasmata.html">
+                        <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+                    </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Forms Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="tables-data_antoxes concrete.html">
+                        <i class="bi bi-circle"></i><span>Concrete Categories</span>
+                    </a>
+                </li>
+                </ul>
+            </li><!-- End Tables Nav -->
+
+            
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Σύνθετα Υλικά-Ελάσματα</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Applications</li>
+                    <li class="breadcrumb-item active">Σύνθετα Υλικά-Ελάσματα</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Material Characteristics</h5>
+
+              <!-- Material Characteristics Form -->
+              <form id="material-properties">
+                <div class="mb-3">
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="fc" class="col-form-label">Αντοχή Σκυροδέματος Fc (MPa)</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input list="fc-options" class="form-control" id="fc" name="fc" value="30">
+                      <datalist id="fc-options">
+                        <option value="12"></option>
+                        <option value="16"></option>
+                        <option value="20"></option>
+                        <option value="25"></option>
+                        <option value="30"></option>
+                      </datalist>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="gc" class="col-form-label">gc</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="gc" value="1.5">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="fs" class="col-form-label">fs</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="fs" value="500">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="gs" class="col-form-label">gs</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="gs" value="1.15">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- End Material Characteristics Form -->
+
+              <h5 class="card-title">Section Characteristics</h5>
+
+              <!-- Section Characteristics Form -->
+              <form id="section-properties">
+                <div class="mb-3">
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="b" class="col-form-label">Width of the section b (m)</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="b" value="0.35">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="h" class="col-form-label">Height of the section h (m)</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="h" value="0.65">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="c" class="col-form-label">Cover c (m)</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="c" value="0.025">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="synd" class="col-form-label">Stirrup diameter (mm)</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="synd" value="0">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- End Section Characteristics Form -->
+
+              <h5 class="card-title">Reinforcement</h5>
+
+              <!-- Reinforcement Form -->
+              <form id="reinforcement-properties">
+                <div class="mb-3">
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                      <label for="reinforcement" class="col-form-label">Reinforcement</label>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="reinforcement" value="4Φ20+2Φ12+3Φ14">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- End Reinforcement Form -->
+
+              <!-- Calculate Button -->
+              <div class="row align-items-center">
+                <div class="col-sm-2">
+                  <button type="button" id="calculate-button" class="btn btn-primary">Calculate</button>
+                </div>
+              </div>
+
+              <!-- Result Display -->
+              <div id="result" class="mt-4"></div>
+              <!-- Image Section -->
+              <div class="mt-12">
+                <h5 class="card-title">Image Section</h5>
+                <img src="assets/img/typo.png" class="img-fluid" alt="Descriptive Alt Text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/calculations/calculate_rc_beam.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for Calculation -->
+  <script>
+    function calculate() {
+      const fc = parseFloat(document.getElementById('fc').value);
+      const gc = parseFloat(document.getElementById('gc').value);
+      const fs = parseFloat(document.getElementById('fs').value);
+      const gs = parseFloat(document.getElementById('gs').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const h = parseFloat(document.getElementById('h').value);
+      const c = parseFloat(document.getElementById('c').value);
+      const synd = parseFloat(document.getElementById('synd').value);
+
+      const reinforcement = document.getElementById('reinforcement').value;
+      const newStr = reinforcement.split(/[Φφ+]/).map(Number);
+      let maxSid = newStr[1];
+
+      for (let i = 1; i < newStr.length; i += 2) {
+        if (newStr[i] > maxSid) {
+          maxSid = newStr[i];
+        }
+      }
+
+      const sid = maxSid;
+      let As = 0;
+      for (let i = 0; i < newStr.length; i += 2) {
+        As += (newStr[i] * Math.PI * Math.pow(newStr[i + 1] / 10, 2)) / 4;
+      }
+
+      const d = h - (sid / 2000) - (synd / 1000) - c;
+      const fcd = 0.85 * fc / gc;
+      const fyd = fs / gs;
+      const x = As * (fyd / 10) / (0.8 * b * fcd * 1000);
+      const z = d - (0.4 * x);
+      const Mrd = As * fyd * z / 10;
+      console.log(As, fcd, fyd, x, z);
+      document.getElementById('result').innerHTML = `<p>The moment capacity is ${Mrd.toFixed(2)} kNm</p>`;
+    }
+
+    document.getElementById('calculate-button').addEventListener('click', calculate);
+  </script>
+
+</body>
+
+</html>

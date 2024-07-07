@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Applications</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="rc_roph.html">
+                <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
+            </a>
+        </li>
+        <li>
+            <a href="syntheta_elasmata.html">
+                <i class="bi bi-circle"></i><span>Σύνθετα Ελάσματα</span>
+            </a>
+        </li>
+        <li>
+            <a href="syntheta_ufasmata.html">
+                <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+            </a>
+        </li>
+
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="tables-data_antoxes concrete.html" class="active">
+              <i class="bi bi-circle"></i><span>Concrete Categories</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Data Tables</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Tables</li>
+          <li class="breadcrumb-item active">Concrete Categories</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Datatables</h5>
+              <p>Concrete Categories</a>.</p>
+
+              <!-- Table with stripped rows -->
+<table class="table datatable">
+  <thead>
+    <tr>
+      <th>fck(MPa)</th>
+      <th>fck,cube(MPa)</th>
+      <th>fcm(MPa)</th>
+      <th>fctm(MPa)</th>
+      <th>fctk,0.05(MPa)</th>
+      <th>fctk,0.95(MPa)</th>
+      <th>Ecm(GPa)</th>
+      <th>εc2 (‰)</th>
+      <th>εcu2 (‰)</th>
+      <th>n</th>
+      <th>εc3 (‰)</th>
+      <th>εcu3 (‰)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>12</td>
+      <td>15</td>
+      <td>20</td>
+      <td>1,6</td>
+      <td>1,1</td>
+      <td>2,0</td>
+      <td>27</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>20</td>
+      <td>24</td>
+      <td>1,9</td>
+      <td>1,3</td>
+      <td>2,5</td>
+      <td>29</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>25</td>
+      <td>28</td>
+      <td>2,2</td>
+      <td>1,5</td>
+      <td>2,9</td>
+      <td>30</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>30</td>
+      <td>33</td>
+      <td>2,6</td>
+      <td>1,8</td>
+      <td>3,3</td>
+      <td>31</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>37</td>
+      <td>38</td>
+      <td>2,9</td>
+      <td>2,0</td>
+      <td>3,8</td>
+      <td>33</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>45</td>
+      <td>43</td>
+      <td>3,2</td>
+      <td>2,2</td>
+      <td>4,2</td>
+      <td>34</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>50</td>
+      <td>48</td>
+      <td>3,5</td>
+      <td>2,5</td>
+      <td>4,6</td>
+      <td>35</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>55</td>
+      <td>53</td>
+      <td>3,8</td>
+      <td>2,7</td>
+      <td>4,9</td>
+      <td>36</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>60</td>
+      <td>58</td>
+      <td>4,1</td>
+      <td>2,9</td>
+      <td>5,3</td>
+      <td>37</td>
+      <td>2,0</td>
+      <td>3,5</td>
+      <td>2,0</td>
+      <td>1,75</td>
+      <td>3,5</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>67</td>
+      <td>63</td>
+      <td>4,2</td>
+      <td>3,0</td>
+      <td>5,5</td>
+      <td>38</td>
+      <td>2,2</td>
+      <td>3,1</td>
+      <td>1,75</td>
+      <td>1,8</td>
+      <td>3,1</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>75</td>
+      <td>68</td>
+      <td>4,4</td>
+      <td>3,1</td>
+      <td>5,7</td>
+      <td>39</td>
+      <td>2,3</td>
+      <td>2,9</td>
+      <td>1,6</td>
+      <td>1,9</td>
+      <td>2,9</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>85</td>
+      <td>78</td>
+      <td>4,6</td>
+      <td>3,2</td>
+      <td>6,0</td>
+      <td>41</td>
+      <td>2,4</td>
+      <td>2,7</td>
+      <td>1,45</td>
+      <td>2,0</td>
+      <td>2,7</td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>95</td>
+      <td>88</td>
+      <td>4,8</td>
+      <td>3,4</td>
+      <td>6,3</td>
+      <td>42</td>
+      <td>2,5</td>
+      <td>2,6</td>
+      <td>1,4</td>
+      <td>2,2</td>
+      <td>2,6</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>105</td>
+      <td>98</td>
+      <td>5,0</td>
+      <td>3,5</td>
+      <td>6,6</td>
+      <td>44</td>
+      <td>2,6</td>
+      <td>2,6</td>
+      <td>1,4</td>
+      <td>2,3</td>
+      <td>2,6</td>
+    </tr>
+  </tbody>
+</table>
+<!-- End Table with stripped rows -->
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
