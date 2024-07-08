@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>Structural Toolkit</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+
+    <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -17,45 +27,56 @@
     <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
+
 <body>
+
+    <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
+
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">Lineal</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div>
-    </header>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
 
+    <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
+
         <ul class="sidebar-nav" id="sidebar-nav">
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.html">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
-            </li>
+            </li><!-- End Dashboard Nav -->
+
             <li class="nav-item">
                 <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>Applications</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="rc_roph.html" >
+                        <a href="rc_roph.html">
                             <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
                         </a>
                     </li>
                     <li>
-                        <a href="rc_roph_diplos.html" class="active">
+                        <a href="rc_roph_diplos.html">
                             <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Διπλός Οπλισμός</span>
                         </a>
                     </li>
                     <li>
-                        <a href="rc_roph_enisxush_katw.html">
-                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Ενίσχυση Κάτω Παρειάς</span>
+                        <a href="rc_roph_enisxush_katw.html" class="active">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Ενίσχυση Κάτω Παρειάς </span>
                         </a>
                     </li>
                     <li>
@@ -73,7 +94,8 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li><!-- End Forms Nav -->
+
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -90,21 +112,22 @@
                         </a>
                     </li>
                 </ul>
-            </li>
-        </ul>
-    </aside>
+            </li><!-- End Tables Nav -->
+
+    </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
+
         <div class="pagetitle">
-            <h1>Σύνθετα Ελάσματα</h1>
+            <h1>Ενίσχυση κάτω παρειάς</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item">Applications</li>
-                    <li class="breadcrumb-item active">Υπολογισμός ροπής διπλός οπλισμός</li>
+                    <li class="breadcrumb-item active">Ενίσχυση κάτω παρειάς</li>
                 </ol>
             </nav>
-        </div>
+        </div><!-- End Page Title -->
 
         <section class="section">
             <div class="row justify-content-center">
@@ -112,6 +135,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Material Characteristics</h5>
+
+                            <!-- Material Characteristics Form -->
                             <form id="material-properties">
                                 <div class="mb-3">
                                     <div class="row align-items-center">
@@ -132,7 +157,7 @@
                                     </div>
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="fs1" class="col-form-label">Αντοχή Χάλυβα fs1 (MPa):</label>
+                                            <label for="fs1" class="col-form-label">Αντοχή Χάλυβα εφελκυόμενος ενίσχυσης (MPa):</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="fs1" value="500">
@@ -140,10 +165,18 @@
                                     </div>
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="fs2" class="col-form-label">Αντοχή Χάλυβα fs2 (MPa):</label>
+                                            <label for="fs2" class="col-form-label">Αντοχή Χάλυβα θλιβόμενος υφιστάμενος (MPa):</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="fs2" value="220">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="fs3" class="col-form-label">Αντοχή Χάλυβα εφελκυόμενος υφιστάμενος (MPa):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="fs3" value="220">
                                         </div>
                                     </div>
                                     <div class="row align-items-center">
@@ -156,13 +189,16 @@
                                     </div>
                                 </div>
                             </form>
+                            <!-- End Material Characteristics Form -->
 
                             <h5 class="card-title">Section Characteristics</h5>
+
+                            <!-- Section Characteristics Form -->
                             <form id="section-properties">
                                 <div class="mb-3">
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="b" class="col-form-label">Πλάτος διατομής b (m):</label>
+                                            <label for="b" class="col-form-label">Width of the section b (m)</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="b" value="0.25">
@@ -170,7 +206,7 @@
                                     </div>
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="h" class="col-form-label">Ύψος διατομής h (m):</label>
+                                            <label for="h" class="col-form-label">Height of the section h (m)</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="h" value="0.55">
@@ -178,7 +214,7 @@
                                     </div>
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="d1" class="col-form-label">Επικάλυψη Κάτω Παρειάς d1 (m):</label>
+                                            <label for="d1" class="col-form-label">Επικάλυψη εφελκυόμενης ίνας (m):</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="d1" value="0.02">
@@ -186,7 +222,7 @@
                                     </div>
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="d2" class="col-form-label">Επικάλυψη Άνω Παρειάς d2 (m):</label>
+                                            <label for="d2" class="col-form-label">Επικάλυψη θλιβόμενης ίνας (m):</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="d2" value="0.02">
@@ -194,12 +230,29 @@
                                     </div>
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
-                                            <label for="o_d" class="col-form-label">Οπλισμός Διάτμησης (mm):</label>
+                                            <label for="d3" class="col-form-label">Επικάλυψη θλιβόμενης ίνας (m):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="d3" value="0.095">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="o_d" class="col-form-label">Οπλισμός δίατμησης (mm):</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" id="o_d" value="8">
                                         </div>
                                     </div>
+                                </div>
+                            </form>
+                            <!-- End Section Characteristics Form -->
+
+                            <h5 class="card-title">Reinforcement</h5>
+
+                            <!-- Reinforcement Form -->
+                            <form id="reinforcement-properties">
+                                <div class="mb-3">
                                     <div class="row align-items-center">
                                         <div class="col-sm-4">
                                             <label for="oplismos1" class="col-form-label">Εφελκυόμενος Οπλισμός:</label>
@@ -216,34 +269,53 @@
                                             <input type="text" class="form-control" id="oplismos2" value="2Φ8">
                                         </div>
                                     </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="oplismos3" class="col-form-label">Εφελκυόμενος Οπλισμός Υφιστάμενος:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="oplismos3" value="2Φ8">
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
+                            <!-- End Reinforcement Form -->
 
+                            <!-- Calculate Button -->
                             <div class="row align-items-center">
                                 <div class="col-sm-2">
                                     <button type="button" id="calculate-button" class="btn btn-primary">Calculate</button>
                                 </div>
                             </div>
 
+                            <!-- Result Display -->
                             <div id="result" class="mt-4"></div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
             &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
-    </footer>
+    </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+    <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/chart.js/chart.umd.js"></script>
@@ -252,22 +324,29 @@
     <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
     <script src="assets/vendor/tinymce/tinymce.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/calculations/calculate_rc_beam.js"></script>
+
+    <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Custom JS for Calculation -->
     <script>
         function calculate() {
             const fc = parseFloat(document.getElementById('fc').value);
             const gc = parseFloat(document.getElementById('gc').value);
             const fs1 = parseFloat(document.getElementById('fs1').value);
             const fs2 = parseFloat(document.getElementById('fs2').value);
+            const fs3 = parseFloat(document.getElementById('fs3').value);
             const gs = parseFloat(document.getElementById('gs').value);
             const b = parseFloat(document.getElementById('b').value);
             const h = parseFloat(document.getElementById('h').value);
             const d1 = parseFloat(document.getElementById('d1').value);
             const d2 = parseFloat(document.getElementById('d2').value);
+            const d3 = parseFloat(document.getElementById('d3').value);
             const o_d = parseFloat(document.getElementById('o_d').value);
             const oplismos1 = document.getElementById('oplismos1').value;
             const oplismos2 = document.getElementById('oplismos2').value;
+            const oplismos3 = document.getElementById('oplismos3').value;
 
             function parseOplismos(oplismos) {
                 const newStr = oplismos.split(/[Φφ+]/).map(Number);
@@ -291,29 +370,38 @@
 
             const { s: s1, As: As1 } = parseOplismos(oplismos1);
             const { s: s2, As: As2 } = parseOplismos(oplismos2);
+            const { s: s3, As: As3 } = parseOplismos(oplismos3);
+
             const d = h - d1 - ((o_d + (s1 / 2)) / 1000);
+            const dd = d2 + ((o_d + (s2 / 2)) / 1000);
+            const ddd = h - d3 - ((o_d + (s3 / 2)) / 1000);
+
             const fcd = 0.85 * fc / gc;
             const fyd1 = fs1 / gs;
             const fyd2 = fs2 / gs;
+            const fyd3 = fs3 / gs;
+
             const elim1 = fyd1 / 200;
             const elim2 = fyd2 / 200;
+            const elim3 = fyd3 / 200;
+
             let ec = 3.5;
             let es1 = elim1;
             let NN = 10;
-
-            let x, dd, es2, a, Fcd, Fs1, Fs2, N, Mrd, m;
+            let arithmos_epanalhpsewn = 1;
+            let x, es2, es3, a, Fcd, Fs1, Fs2, Fs3, N;
 
             while (NN !== 0) {
                 x = (ec / es1) * d / (1 + (ec / es1));
-                dd = d2 + ((o_d + (s2 / 2)) / 1000);
+                
                 es2 = (x - dd) * ec / x;
+                es3 = (ddd - x) * es1 / (d - x);
                 a = ec > 2 ? (3 * ec - 2) / (3 * ec) : (ec * (6 - ec)) / 12;
                 Fcd = a * x * b * fc * 0.85 * 1000 / gc;
-               
                 Fs1 = es1 >= elim1 ? As1 * fyd1 / 10 : As1 * fs1 * es1 / (10 * elim1);
+                Fs3 = es3 >= elim3 ? As3 * fyd3 / 10 : As3 * fs3 * es3 / (10 * elim3);
                 Fs2 = es2 >= elim2 ? As2 * fyd2 / 10 : As2 * fs2 * es2 / (10 * elim2);
-                N = Fcd + Fs2 - Fs1;
-
+                N = Fcd + Fs2 - Fs1 - Fs3;
                 if (N > 0.001) {
                     ec -= 0.0001;
                 } else if (N < -0.001) {
@@ -321,21 +409,23 @@
                 } else {
                     NN = 0;
                 }
-
-                Mrd = Fcd * (d - 0.4 * x) + Fs2 * (d - dd);
-                m = Mrd / (b * Math.pow(d, 2) * fcd * 1000);
+                arithmos_epanalhpsewn += 1;
             }
 
+            const Mrd = Fcd * (d - 0.4 * x) + Fs2 * (d - dd) - Fs3 * (d - ddd);
+            const m = Mrd / (b * Math.pow(d, 2) * fcd * 1000);
             const results_kampsh = {
-                Mrd: Mrd.toFixed(5),
-                m: m.toFixed(5),
-                Fcd: Fcd.toFixed(5),
-                Fs1: Fs1.toFixed(5),
-                Fs2: Fs2.toFixed(5),
-                N: N.toFixed(5),
-                ec: ec.toFixed(5),
-                es1: es1.toFixed(5),
-                es2: es2.toFixed(5),
+                Mrd,
+                m,
+                Fcd,
+                Fs1,
+                Fs2,
+                Fs3,
+                N,
+                ec,
+                es1,
+                es2,
+                es3,
                 fc,
                 gc,
                 fs1,
@@ -344,28 +434,39 @@
                 h,
                 d,
                 As1,
-                As2
+                As2,
+                As3
             };
 
-            let resultHTML = `<table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>`;
-
-            for (const [key, value] of Object.entries(results_kampsh)) {
-                resultHTML += `<tr><td>${key}</td><td>${value}</td></tr>`;
-            }
-
-            resultHTML += `</tbody></table>`;
-
-            document.getElementById('result').innerHTML = resultHTML;
+            document.getElementById('result').innerHTML = `
+                <h3>Results</h3>
+                <p>Mrd: ${Mrd.toFixed(2)} kNm</p>
+                <p>m: ${m.toFixed(2)}</p>
+                <p>Fcd: ${Fcd.toFixed(2)} kN</p>
+                <p>Fs1: ${Fs1.toFixed(2)} kN</p>
+                <p>Fs2: ${Fs2.toFixed(2)} kN</p>
+                <p>Fs3: ${Fs3.toFixed(2)} kN</p>
+                <p>N: ${N.toFixed(2)} kN</p>
+                <p>ec: ${ec.toFixed(2)}</p>
+                <p>es1: ${es1.toFixed(2)}</p>
+                <p>es2: ${es2.toFixed(2)}</p>
+                <p>es3: ${es3.toFixed(2)}</p>
+                <p>fc: ${fc} MPa</p>
+                <p>gc: ${gc}</p>
+                <p>fs1: ${fs1} MPa</p>
+                <p>gs: ${gs}</p>
+                <p>b: ${b} m</p>
+                <p>h: ${h} m</p>
+                <p>d: ${d} m</p>
+                <p>As1: ${As1.toFixed(2)} mm²</p>
+                <p>As2: ${As2.toFixed(2)} mm²</p>
+                <p>As3: ${As3.toFixed(2)} mm²</p>
+            `;
         }
 
         document.getElementById('calculate-button').addEventListener('click', calculate);
     </script>
+
 </body>
+
 </html>
