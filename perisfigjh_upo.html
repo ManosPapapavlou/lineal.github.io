@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+    </header>
+
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Applications</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="syntheta_ufasmata.html" class="active">
+                            <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>Σύνθετα Υλικά-Υφάσματα</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Applications</li>
+                    <li class="breadcrumb-item active">Σύνθετα Υλικά-Υφάσματα</li>
+                </ol>
+            </nav>
+        </div>
+
+        <section class="section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Material Characteristics</h5>
+                            <form id="material-properties">
+                                <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="sxhma" class="col-form-label">Shape:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sxhma" id="rectangular" value="1" checked>
+                                                <label class="form-check-label" for="rectangular">Rectangular</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="sxhma" id="circular" value="2">
+                                                <label class="form-check-label" for="circular">Circular</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="bc" class="col-form-label">bc:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="bc" value="50">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="hc" class="col-form-label">hc:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="hc" value="35">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="bw" class="col-form-label">bw:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="bw" value="35">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="fcm" class="col-form-label">fcm:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="fcm" value="16.61">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="k" class="col-form-label">k:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="k" value="2">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="r" class="col-form-label">r:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="r" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="t1" class="col-form-label">t1:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="t1" value="0.165">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="as" class="col-form-label">as:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="as" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="Ej" class="col-form-label">Ej:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="Ej" value="240">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="eu" class="col-form-label">eu:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="eu" value="15">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="c" class="col-form-label">c:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="c" value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" id="calculate-button" class="btn btn-primary">Calculate</button>
+                            <div id="result" class="mt-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function calculate() {
+            const sxhma = parseInt(document.querySelector('input[name="sxhma"]:checked').value);
+            const bc = parseFloat(document.getElementById('bc').value);
+            const hc = parseFloat(document.getElementById('hc').value);
+            const bw = parseFloat(document.getElementById('bw').value);
+            const fcm = parseFloat(document.getElementById('fcm').value);
+            const k = parseFloat(document.getElementById('k').value);
+            const r = parseFloat(document.getElementById('r').value);
+            const t1 = parseFloat(document.getElementById('t1').value);
+            const as = parseFloat(document.getElementById('as').value);
+            const Ej = parseFloat(document.getElementById('Ej').value);
+            const eu = parseFloat(document.getElementById('eu').value);
+            const c = parseFloat(document.getElementById('c').value);
+
+            const Ac = bc * hc;
+
+            const b = 2 * r / bc;
+            const g = 2 * r / hc;
+            const an = 1 - (1 / (3 * Ac)) * ((bc ** 2) * ((1 - b) ** 2) + (hc ** 2) * ((1 - g) ** 2));
+
+            let a;
+            if (sxhma === 1) {
+                a = an * as;
+            } else {
+                a = 1;
+            }
+
+            const tj = t1 * k;
+            const rjx = 2 * tj / (bw * 10);
+
+            const eo = (t1 / (2 * (r * 10))) * 1000;
+            const eures = eu - eo;
+
+            let fures;
+            if (sxhma === 1) {
+                fures = Ej * 1000 * eures / 1000;
+            } else {
+                fures = 3500;
+            }
+
+            const fu = fures * c;
+            const l = a * rjx * fu / fcm;
+
+            const K = 3.5 * (l ** (3 / 4));
+            const logos_aukshshs = 1 + K;
+            const fcc = fcm * logos_aukshshs;
+
+            const result = `
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Results</h5>
+                        <p><strong>Ac:</strong> ${Ac.toFixed(2)}</p>
+                        <p><strong>b:</strong> ${b.toFixed(2)}</p>
+                        <p><strong>g:</strong> ${g.toFixed(2)}</p>
+                        <p><strong>an:</strong> ${an.toFixed(2)}</p>
+                        <p><strong>a:</strong> ${a.toFixed(2)}</p>
+                        <p><strong>tj:</strong> ${tj.toFixed(2)}</p>
+                        <p><strong>rjx:</strong> ${rjx.toFixed(2)}</p>
+                        <p><strong>eo:</strong> ${eo.toFixed(2)}</p>
+                        <p><strong>eures:</strong> ${eures.toFixed(2)}</p>
+                        <p><strong>fures:</strong> ${fures.toFixed(2)}</p>
+                        <p><strong>fu:</strong> ${fu.toFixed(2)}</p>
+                        <p><strong>l:</strong> ${l.toFixed(2)}</p>
+                        <p><strong>K:</strong> ${K.toFixed(2)}</p>
+                        <p><strong>logos_aukshshs:</strong> ${logos_aukshshs.toFixed(2)}</p>
+                        <p><strong>fcc:</strong> ${fcc.toFixed(2)}</p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('result').innerHTML = result;
+        }
+
+        document.getElementById('calculate-button').addEventListener('click', calculate);
+    </script>
+
+</body>
+
+</html>
