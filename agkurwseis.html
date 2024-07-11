@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Applications</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="rc_roph.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rc_roph_diplos.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Διπλός Οπλισμός</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rc_roph_enisxush_katw.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Ενίσχυση Κάτω Παρειάς</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="syntheta_elasmata.html">
+                            <i class="bi bi-circle"></i><span>Σύνθετα Ελάσματα</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="syntheta_ufasmata.html" class="active">
+                            <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perisfijh_upo.html">
+                            <i class="bi bi-circle"></i><span>Περίσφιξη με Σύνθετα Υφάσματα Υποστυλώματος</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ksulino_patwma.html" class="active">
+                            <i class="bi bi-circle"></i><span>Ξύλινο Πάτωμα</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Forms Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="tables-data_antoxes concrete.html">
+                            <i class="bi bi-circle"></i><span>Concrete Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tables-data_antoxestimber.html">
+                            <i class="bi bi-circle"></i><span>Timber Categories</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Tables Nav -->
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Αγκύρωση οπλισμών</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Applications</li>
+                    <li class="breadcrumb-item active">Αγκύρωση οπλισμών</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Δοκός - Inputs</h5>
+
+                            <!-- Inputs Form -->
+                            <form id="beam-properties">
+                                <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="b" class="col-form-label">πλάτος δοκού b (m):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="b" value="0.25">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="h" class="col-form-label">Ύψος δοκού h (m):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="h" value="0.4">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="cnom" class="col-form-label">Επικάλυψη οπλισμού cnom
+                                                (m):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="cnom" value="0.035">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="fck" class="col-form-label">Αντοχή Σκυροδέματος Fck
+                                                (MPa)</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="fck" name="fck">
+                                                <option value="12">C12</option>
+                                                <option value="16">C16</option>
+                                                <option value="20">C20</option>
+                                                <option value="25">C25</option>
+                                                <option value="30" selected>C30</option>
+                                                <option value="35">C35</option>
+                                                <option value="40">C40</option>
+                                                <option value="45">C45</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="fctk" class="col-form-label"> Fctk (MPa)</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="fctk" name="fctk">
+                                                <option value="0.73">C12</option>
+                                                <option value="0.89">C16</option>
+                                                <option value="1.03">C20</option>
+                                                <option value="1.2">C25</option>
+                                                <option value="1.35" selected>C30</option>
+                                                <option value="1.5">C35</option>
+                                                <option value="1.64">C40</option>
+                                                <option value="1.77">C45</option>
+
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="pl_s" class="col-form-label">Πλήθος σιδήρων</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="pl_s" value="3">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="s" class="col-form-label">Δίαμετρος σιδήρων (mm):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="s" value="12">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="synd" class="col-form-label">Συνδετήρας (mm):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="synd" value="10">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="fyk" class="col-form-label">Αντοχή οπλισμού fyk (MPa):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="fyk" value="500">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="sinthiki" class="col-form-label"> Συνθήκη</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="sinthiki" name="sinthiki">
+                                                <option value="1">Ευμενής</option>
+                                                <option value="2">Δυσμενής</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="upo" class="col-form-label">Πλάτος Υποστυλώματος (m):</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="upo" value="0.25">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="s_up" class="col-form-label">Φ σιδήρων Υποστυλώματος</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="s_up" value="16">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- End Inputs Form -->
+
+                            <h5 class="card-title">Results</h5>
+                            <div id="results" class="mt-4"></div>
+
+                            <!-- Calculate Button -->
+                            <div class="row align-items-center">
+                                <div class="col-sm-2">
+                                    <button type="button" id="calculate-button"
+                                        class="btn btn-primary">Calculate</button>
+                                </div>
+                            </div>
+
+                            <!-- Custom JS for Calculation -->
+                            <script>
+                                function calculate() {
+                                    const b = parseFloat(document.getElementById('b').value);
+                                    const h = parseFloat(document.getElementById('h').value);
+                                    const cnom = parseFloat(document.getElementById('cnom').value);
+                                    const fck = parseFloat(document.getElementById('fck').value);
+                                    const fctk = parseFloat(document.getElementById('fctk').value);
+                                    const pl_s = parseFloat(document.getElementById('pl_s').value);
+                                    const s = parseFloat(document.getElementById('s').value);
+                                    const synd = parseFloat(document.getElementById('synd').value);
+                                    const fyk = parseFloat(document.getElementById('fyk').value);
+                                    const sinthiki = parseFloat(document.getElementById('sinthiki').value);
+                                    const upo = parseFloat(document.getElementById('upo').value);
+                                    const s_up = parseFloat(document.getElementById('s_up').value);
+
+                                    let p_upo = upo - cnom - (synd / 1000) - (s_up / 2000);
+
+                                    let fbd;
+                                    if (sinthiki == 1) {
+                                        if (s <= 32) {
+                                            fbd = fctk * 2.25;
+                                        } else {
+                                            fbd = fctk * 2.25 * (132 - s) / 100;
+                                        }
+                                    } else {
+                                        if (s <= 32) {
+                                            fbd = fctk * 2.25 * 0.7;
+                                        } else {
+                                            fbd = 0.7 * fctk * 2.25 * (132 - s) / 100;
+                                        }
+                                    }
+
+                                    let lbrqd = (s / 40) * (fyk / (fbd * 1.15));
+
+                                    let a = (b - (2 * cnom) - (2 * synd / 1000) - (pl_s * s / 1000)) / (pl_s - 1);
+                                    let c1 = cnom + synd / 1000;
+                                    let cd = Math.min(c1, a);
+
+                                    let a1 = 1;
+                                    let a2 = 1 - (0.15 * (cd - (s / 1000)) / (s / 1000));
+                                    a2 = Math.max(0.7, a2);
+                                    a2 = Math.min(a2, 1);
+                                    let a3 = 0.95;
+                                    let a4 = 0.7;
+                                    let a5 = 1;
+                                    let lbd = a1 * a2 * a3 * a4 * a5 * lbrqd;
+                                    let lbmin = Math.max(0.6 * lbrqd, s, 10);
+                                    lbd = Math.max(lbd, lbmin);
+
+                                    let a11 = cd >= (3 * s / 1000) ? 0.7 : 1;
+                                    let a22 = 1 - (0.15 * (cd - (3 * s / 1000)) / (s / 1000));
+                                    a22 = Math.max(0.7, a22);
+                                    a22 = Math.min(a22, 1);
+                                    let a33 = 0.9;
+                                    let a44 = 0.7;
+                                    let a55 = 1;
+                                    let lbdd = a11 * a22 * a33 * a44 * a55 * lbrqd;
+                                    let lbminn = Math.max(0.3 * lbrqd, s, 10);
+                                    lbdd = Math.max(lbdd, lbminn);
+
+                                    let Dtymp_s = s <= 16 ? 4 * s / 1000 : 7 * s / 1000;
+                                    let ab = Math.min(cnom + (synd / 1000) + (s / 2000), (cnom + (s / 1000)) / 2);
+                                    ab = ab * 100;
+                                    let As = Math.PI * Math.pow(s / 10, 2) / 4;
+                                    let Fbt = As * fyk / (10 * 1.15);
+                                    let Dtymp = Fbt * ((100 / ab) + (1 / (2 * s / 1000))) / (fck * 1000 / 1.5);
+                                    Dtymp = Math.max(Dtymp, Dtymp_s);
+                                    let Rmmin = Dtymp * 100 / 2;
+                                    let l12 = p_upo - (Rmmin / 100);
+                                    Fbt = As * fyk / (10 * 1.15) - (Math.PI * s * l12 * fbd);
+                                    Dtymp = Fbt * ((100 / ab) + (1 / (2 * s / 1000))) / (fck * 1000 / 1.5);
+                                    Dtymp = Math.max(Dtymp, Dtymp_s);
+                                    Rmmin = Dtymp / 2;
+                                    l12 = p_upo - Rmmin;
+
+                                    let l123, fbdeum, Fyd, l345;
+                                    if (sinthiki == 2) {
+                                        l123 = l12 + (2 * Math.PI * Rmmin) / 8;
+                                        fbdeum = fbd / 0.7;
+                                        Fyd = As * fyk / (10 * 1.15);
+                                        l345 = (Fyd - (Math.PI * (s / 1000) * l123 * fbd * 1000)) / (Math.PI * (s / 1000) * fbdeum * 1000);
+                                    } else {
+                                        l123 = l12 + (2 * Math.PI * Rmmin) / 8;
+                                        Fyd = As * fyk / (10 * 1.15);
+                                        l345 = (Fyd - (Math.PI * (s / 1000) * l123 * fbd * 1000)) / (Math.PI * (s / 1000) * fbd * 1000);
+                                    }
+
+                                    let l45 = l345 - (2 * Math.PI * Rmmin) / 8;
+
+                                    let results = `
+                                        <div class="card mt-4">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Results</h5>
+                                                <h5 class="card-title">Για ευνοικές συνθήκες</h5>
+                                                <img src="assets/img/dusmenhs_sunthiki.png" alt="Εικόνα συνθήκης" style="max-width: 100%; height: auto;">
+                                                <p> Συμβαίνουν λόγο της σκυροδέτησης με τα αδρανή να κάθονται στο κάτω μέρος της δοκού για αυτό ανάλογα με την παρακάτω εικόνα, διαλέγουμε την συνθήκη. Αν είναι άνω οπλισμός είναι δυσμενείς αλλίως ευμενείς.</p>
+                                                <p><strong>l12:</strong> ${l12.toFixed(2)} m</p>
+                                                <p><strong>l123:</strong> ${l123.toFixed(2)} m</p>
+                                                <p><strong>Dtympanou:</strong> ${Dtymp.toFixed(2)} m</p>
+                                                <p><strong>l45:</strong> ${l45.toFixed(2)} m</p>
+                                            </div>
+                                        </div>
+                                    `;
+
+                                    document.getElementById('results').innerHTML = results;
+                                }
+
+                                document.getElementById('calculate-button').addEventListener('click', calculate);
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/calculations/calculate_rc_beam.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
