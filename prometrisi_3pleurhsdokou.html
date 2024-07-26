@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            
+
+            <li class="nav-item">
+                <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Applications</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="rc_roph.html" class="active">
+                        <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="rc_roph_diplos.html">
+                        <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Διπλός Οπλισμός</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="rc_roph_enisxush_katw.html">
+                        <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Ενίσχυση Κάτω Παρειάς</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="syntheta_elasmata.html">
+                        <i class="bi bi-circle"></i><span>Σύνθετα Ελάσματα</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="syntheta_ufasmata.html">
+                        <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+                    </a>
+                </li>
+                <li>
+                  <a href="perisfijh_upo.html">
+                      <i class="bi bi-circle"></i><span>Περίσφιξη με Σύνθετα Υφάσματα Υποστυλώματος</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="ksulino_patwma.html" class="active">
+                      <i class="bi bi-circle"></i><span>Ξύλινο Πάτωμα</span>
+                  </a>
+              </li>
+                </ul>
+            </li><!-- End Forms Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="tables-data_antoxes concrete.html">
+                        <i class="bi bi-circle"></i><span>Concrete Categories</span>
+                    </a>
+                </li>
+                <li>
+                  <a href="tables-data_antoxestimber.html">
+                    <i class="bi bi-circle"></i><span>Timber Categories</span>
+                  </a>
+                </li>
+                </ul>
+            </li><!-- End Tables Nav -->
+
+            
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Σύνθετα Υλικά-Ελάσματα</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Applications</li>
+                    <li class="breadcrumb-item active">Σύνθετα Υλικά-Ελάσματα</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Material Characteristics</h5>
+
+              <!-- Material Characteristics Form -->
+              <form id="material-properties">
+                <div class="mb-3">
+                  
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="arx_platos" class="form-label">Αρχικό Πλάτος (cm):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="arx_platos" value="35">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="arx_upsos" class="form-label">Αρχικό Ύψος (cm):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="arx_upsos" value="65">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="tel_platos" class="form-label">Τελικό Πλάτος (cm):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="tel_platos" value="60">
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        label for="tel_upsos" class="form-label">Τελικό Ύψος (cm):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="tel_upsos" value="72.5">
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="plaka" class="form-label">Πλάκα (cm):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="plaka" value="17">
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="mhkos" class="form-label">Μήκος (m):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="mhkos" value="7.53">
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="epik" class="form-label">Επικάλυψη (m):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="epik" value="0.025">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- End Material Characteristics Form -->
+
+              <h5 class="card-title">Οπλισμοί</h5>
+
+              <!-- Section Characteristics Form -->
+              <form id="section-properties">
+                <div class="mb-3">
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="bsidirou" class="form-label">Βάρος Σιδήρου (Kg/m3):</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="bsidirou" value="0.785">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="oplismos_diamikis" class="form-label">Οπλισμός Διαμήκης:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="oplismos_diamikis" value="6F20+4F20+4F12">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="oplismos_synd" class="form-label">Οπλισμός Συνδετήρων:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="oplismos_synd" value="10/10">
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <label for="oplismos_blhtra" class="form-label">Οπλισμός Βλήτρα:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="oplismos_blhtra" value="3F12/20">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- End Section Characteristics Form -->
+
+             
+
+              <!-- Calculate Button -->
+              <div class="row align-items-center">
+                <div class="col-sm-2">
+                  <button type="button" id="calculate-button" class="btn btn-primary">Calculate</button>
+                </div>
+              </div>
+
+              <!-- Result Display -->
+              <div id="result" class="mt-4"></div>
+              <!-- Image Section -->
+              <div class="mt-12">
+                <h5 class="card-title">Image Section</h5>
+                <img src="assets/img/typo.png" class="img-fluid" alt="Descriptive Alt Text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/calculations/calculate_rc_beam.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for Calculation -->
+  <script>
+  function calculate() {
+    const arx_platos = parseFloat(document.getElementById('arx_platos').value) / 100;
+    const arx_upsos = parseFloat(document.getElementById('arx_upsos').value) / 100;
+    const tel_platos = parseFloat(document.getElementById('tel_platos').value) / 100;
+    const tel_upsos = parseFloat(document.getElementById('tel_upsos').value) / 100;
+    const plaka = parseFloat(document.getElementById('plaka').value) / 100;
+    const mhkos = parseFloat(document.getElementById('mhkos').value);
+    const epik = parseFloat(document.getElementById('epik').value);
+    const bsidirou = parseFloat(document.getElementById('bsidirou').value);
+    const oplismos_diamikis = document.getElementById('oplismos_diamikis').value;
+    const oplismos_synd = document.getElementById('oplismos_synd').value;
+    const oplismos_blhtra = document.getElementById('oplismos_blhtra').value;
+
+    function parseOplismos(oplismos) {
+        const newStr = oplismos.split(/Φ|φ|\+|F|f|\//).map(Number);
+        let As = 0;
+        for (let i = 0; i < newStr.length; i += 2) {
+            As += (newStr[i] * Math.PI * Math.pow(newStr[i + 1] / 10, 2)) / 4;
+        }
+        return As;
+    }
+
+    const As1 = parseOplismos(oplismos_diamikis);
+
+    const newStr2 = oplismos_synd.split("/").map(Number);
+    const As2 = Math.PI * Math.pow(newStr2[1] / 10, 2) / 4;
+    const synd_length = (tel_platos - 2 * epik) + 2 * (tel_upsos - epik - plaka + newStr2[0] / 100);
+    const Bs2 = As2 * synd_length * (mhkos * 100 / newStr2[1]) * bsidirou;
+
+    const newStr3 = oplismos_blhtra.split(/Φ|φ|\+|F|f|\//).map(Number);
+    const temaxia_blhtrwn = newStr3[0] * mhkos * 100 / newStr3[2];
+
+    const Aarxiko = arx_platos * (arx_upsos - plaka);
+    const Aateliko = tel_platos * (tel_upsos - plaka);
+    const kb_gunite = (Aateliko - Aarxiko) * mhkos;
+
+    const resultsHTML = `
+        <p>Βάρος διαμήκων σιδήρων = ${(As1 * mhkos * bsidirou).toFixed(2)} Kg</p>
+        <p>Βάρος συνδετήρων = ${Bs2.toFixed(2)} Kg</p>
+        <p>Τεμάχια βλήτρων = ${temaxia_blhtrwn.toFixed(2)} Φ${newStr3[1]}</p>
+        <p>Κυβικά εκτοξευόμενου σκυροδέματος = ${kb_gunite.toFixed(2)} m3</p>
+    `;
+
+    document.getElementById('result').innerHTML = resultsHTML;
+}
+
+document.getElementById('calculate-button').addEventListener('click', calculate);
+</script>
+
+</body>
+
+</html>
