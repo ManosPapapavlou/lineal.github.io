@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+    
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+    
+            <!-- Concrete Section -->
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#concrete-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Concrete</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="concrete-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="rc_roph.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rc_roph_diplos.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Διπλός Οπλισμός</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rc_roph_enisxush_katw.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Ενίσχυση Κάτω Παρειάς</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="syntheta_elasmata.html">
+                            <i class="bi bi-circle"></i><span>Σύνθετα Ελάσματα</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="syntheta_ufasmata.html" class="active">
+                            <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perisfijh_upo.html">
+                            <i class="bi bi-circle"></i><span>Περίσφιξη με Σύνθετα Υφάσματα Υποστυλώματος</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agkurwseis.html">
+                            <i class="bi bi-circle"></i><span>Αγκυρώσεις οπλισμού δοκών</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="As_oplismwn.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός As οπλισμών</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="drash_blhtrou.html">
+                            <i class="bi bi-circle"></i><span>Δράση βλήτρου</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prometrisi_3pleurhsdokou.html">
+                            <i class="bi bi-circle"></i><span>Προμέτρηση μανδύα δοκού</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Concrete Section -->
+    
+            <!-- Masonry Section -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#masonry-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Masonry</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="masonry-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="antoxh_tristrwths_toixopoias.html">
+                            <i class="bi bi-circle"></i><span>Αντοχή τρίστρωτης και μονόστρωτης τοιχοποιίας</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="omogenopoihsh.html">
+                            <i class="bi bi-circle"></i><span>Ενίσχυση τοιχοποιίας με ομογενοποιήση</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Masonry Section -->
+    
+            <!-- Timber Section -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#timber-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Timber</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="timber-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="ksulino_patwma.html">
+                            <i class="bi bi-circle"></i><span>Υπολογισμός ξύλινου πατώματος</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Timber Section -->
+    
+            <!-- Tables Section -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="tables-data_antoxes concrete.html">
+                            <i class="bi bi-circle"></i><span>Concrete Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tables-data_antoxestimber.html">
+                            <i class="bi bi-circle"></i><span>Timber Categories</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Tables Section -->
+    
+        </ul>
+    
+    </aside><!-- End Sidebar -->
+    
+
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Σύνθετα Υλικά-Ελάσματα</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Applications</li>
+                    <li class="breadcrumb-item active">Σύνθετα Υλικά-Ελάσματα</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <!-- Main Content Section -->
+        <section class="section report-section">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <!-- Report Content -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Μηχανικά χαρακτηριστικά από εργαστηριακούς ελέγχους για εύρεση
+                                αντοχής μονόστρωτης τοιχοποιίας</h5>
+                            <form id="wall-form">
+                                <!-- Inputs -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="f_bc" class="form-label">Θλιπτική αντοχή του λιθοσώματος
+                                            (f<sub>bc</sub>) MPa</label>
+                                        <input type="number" class="form-control" id="f_bc" value="12.72">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="f_mc" class="form-label">Θλιπτική αντοχή κονιάματος (f<sub>mc</sub>)
+                                            MPa</label>
+                                        <input type="number" class="form-control" id="f_mc" value="0.4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="fo" class="form-label">Συντελεστής f<sub>o</sub></label>
+                                        <input type="number" class="form-control" id="fo" value="1.5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="ξ" class="form-label">Συντελεστής ξ</label>
+                                        <input type="number" class="form-control" id="j" value="1">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="l" class="form-label">Συντελεστής λ</label>
+                                        <input type="number" class="form-control" id="l" value="0.3">
+                                    </div>
+                                </div>
+                                <!-- End Inputs -->
+
+                                <h5 class="card-title">Έρευση αντοχών μιας στρώσης τοιχοποιίας</h5>
+                                <p>
+                                    Για χαμηλής αντοχής λιθοδομή:
+                                </p>
+                                <p>
+                                    Η θλιπτική αντοχή μιας στρώσης τοιχοποιίας υπολογίζεται ως:
+                                </p>
+                                <p class="text-center">
+                                    <strong>f<sub>wc1</sub> = ξ * [ (2/3) * √f<sub>bc</sub> - f<sub>o</sub> + λ *
+                                        f<sub>mc</sub> ]</strong>
+                                </p>
+                                <p> όπου: </p>
+                                <li>Vm, Vw ο όγκος του κονιάματος και ο όγκος της τοιχοποιίας </li>
+                                <li> fbc η θλιπτική αντοχή του λιθοσώματος </li>
+                                <li>λ συντελεστής συνάφειας λιθοσώματος-κονιάματος, ο οποίος λαμβάνεται ίσος με 0,50 για
+                                    τραχείς λίθους και ίσος με 0,1 για πολύ λείους λίθους. </li>
+
+                                <li> fo συντελεστής (σε MPa), o οποίος λαμβάνει υπ’ όψη τον βαθμό λάξευσης των λίθων και
+                                    παίρνει τις ακόλουθες τιμές </li>
+                                <ul>
+                                    <li>0,00 για λαξευτή λιθοδομή </li>
+                                    <li>0,50-1,00 για λιθοδομή από ημιλαξευτούς λίθους </li>
+                                    <li>1,50-2,50 για αργολιθοδομή, ανάλογα με την ποιότητα δομήσεως</li>
+                                </ul>
+                                <li>ξ, συντελεστής ο οποίος λαμβάνει υπ’ όψη την δυσμενή επιρροή του  πάχους των αρμών κονιάματος  
+                                    ξ =1:[1+3,5(k-k0)]{<}1,0  k=(όγκος κονιάματος) : (όγκος τοιχοποιίας)= Vm/Vw≥0,30  k0=0,30  
+                                    Εάν Vm/Vw≤0,30, τότε λαμβάνεται 𝜉 =1,00. </li>
+                                
+
+
+                                        <h5 class="card-title">Στοιχεία τρίστρωτης τοιχοποιίας</h5>
+                                        <p>
+                                            Για τον υπολογισμό της τρίστρωτης τοιχοποιία 
+                                        </p>
+                                        <p>
+                                          
+                                       
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="b1" class="form-label">Πάχος εξωτερικής στρώσης
+                                                    (b<sub>1</sub>) cm</label>
+                                                <input type="number" class="form-control" id="b1" value="20">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="b2" class="form-label">Πάχος εσωτερικής στρώσης
+                                                    (b<sub>2</sub>) cm</label>
+                                                <input type="number" class="form-control" id="b2" value="10">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="fci" class="form-label">Θλιπτική αντοχή υλικού πληρώσεως
+                                                    (f<sub>ci</sub>) MPa</label>
+                                                <input type="number" class="form-control" id="fci" value="0.15">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="grd" class="form-label">Δείκτης αβεβαιότητας
+                                                    (γ<sub>Rd</sub>)</label>
+                                                <input type="number" class="form-control" id="grd" value="1.5">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="le" class="form-label">λe (1.00>): συντελεστής αλληλεπίδρασης εξωτερικών παρειών (λαμβάνεται 0.8)
+                                                    
+                                                <input type="number" class="form-control" id="le" value="0.8">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="li" class="form-label">λi (>1.00): συντελεστής αλληλεπίδρασης υλικού πληρώσεως (λαμβάνεται 1.2)
+                                                    
+                                                <input type="number" class="form-control" id="li" value="1.2">
+                                            </div>
+                                        </div>
+
+                                        <h5 class="card-title">Υπολογισμός θλιπτικής αντοχής τρίστρωτης τοιχοποιίας</h5>
+                                        <p>
+                                            Κατά ΚΑΔΕΤ, η θλιπτική αντοχή τρίστρωτης τοιχοποιίας προκύπτει από τη σχέση:
+                                        </p>
+                                        <p class="text-center">
+                                            <strong>f<sub>wc</sub> = [2 * λ<sub>e</sub> * δ * f<sub>wc1</sub> +
+                                                λ<sub>i</sub> * f<sub>ci</sub>] / [γ<sub>Rd</sub> * (1 + 2 *
+                                                δ)]</strong>
+                                        </p>
+                                        <p>
+                                            Όπου:
+                                        </p>
+                                        <ul>
+                                            <li>δ: λόγος του πάχους της εξωτερικής παρειάς προς το πάχος του υλικού
+                                                πληρώσεως</li>
+                                            <li>λ<sub>e</sub> (<1.00): συντελεστής αλληλεπίδρασης εξωτερικών παρειών
+                                                    (λαμβάνεται 0.8)</li>
+                                            <li>λ<sub>i</sub> (>1.00): συντελεστής αλληλεπίδρασης υλικού πληρώσεως
+                                                (λαμβάνεται 1.2)</li>
+                                        </ul>
+
+                                        <h5 class="card-title">Υπολογισμός Μέτρου Ελαστικότητας και Μέτρου Διάτμησης</h5>
+                                        <p>
+                                            Το μέτρο ελαστικότητας και το μέτρο διάτμησης υπολογίζονται ως:
+                                        </p>
+                                        <p class="text-center">
+                                            <strong>E<sub>wc</sub> = 1300 * (1 - f<sub>wc</sub> / 5) *
+                                                f<sub>wc</sub></strong>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="n" class="form-label">Λόγος Poisson ν
+                                                <input type="number" class="form-control" id="n" value="0.5">
+                                            </div>
+                                            
+                                        </div>
+                                        <p class="text-center">
+                                            <strong>G = E<sub>wc</sub> / [2 * (1 + ν)]</strong>
+                                        </p>
+
+                                        <h5 class="card-title">Υπολογισμός εφελκυστικής αντοχής</h5>
+                                        <p>
+                                            Η εφελκυστική αντοχή της τρίστρωτης τοιχοποιίας υπολογίζεται με βάση τις
+                                            σχέσεις του EC8 και τις ιδιότητες των υλικών.
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="b1" class="form-label">Εφελκυστική αντοχή εξωτερικής στρώσης
+                                                    (ft<sub>1</sub>) MPa</label>
+                                                <input type="number" class="form-control" id="ft" value="0.039">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="b2" class="form-label">Εφελκυστική αντοχή εσωτερικής στρώσης (0 αν χαμηλής αντοχής)
+                                                    (ftsub<sub>2</sub>) MPa</label>
+                                                <input type="number" class="form-control" id="ftsub" value="0.039">
+                                            </div>
+                                        </div>
+
+                                        <button type="button" id="calculate-button"
+                                            class="btn btn-primary">Υπολογισμός</button>
+                            </form>
+
+                            <!-- Result Display -->
+                            <div id="result" class="mt-4">
+                                <!-- Results will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Report Content -->
+                </div>
+            </div>
+        </section>
+    </main><!-- End Main -->
+
+      <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/calculations/calculate_rc_beam.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+    <!-- JavaScript Logic for Calculation -->
+    <script>
+        function calculate() {
+            // Retrieve values from inputs
+            const f_bc = parseFloat(document.getElementById('f_bc').value);
+            const f_mc = parseFloat(document.getElementById('f_mc').value);
+            const fo = parseFloat(document.getElementById('fo').value);
+            const j = parseFloat(document.getElementById('j').value);
+            const l = parseFloat(document.getElementById('l').value);
+            const b1 = parseFloat(document.getElementById('b1').value);
+            const b2 = parseFloat(document.getElementById('b2').value);
+            const fci = parseFloat(document.getElementById('fci').value);
+            const ft = parseFloat(document.getElementById('ft').value);
+            const ftsub = parseFloat(document.getElementById('ftsub').value);
+            const le = parseFloat(document.getElementById('le').value);
+            const li = parseFloat(document.getElementById('li').value);
+            const grd = parseFloat(document.getElementById('grd').value);
+            const n = parseFloat(document.getElementById('n').value);
+
+            // Calculations
+            // Single layer masonry strength (fwc1)
+            const fwc1 = j * (((2 / 3) * Math.sqrt(f_bc) - fo) + l * f_mc);
+
+            // Triple-layer masonry calculations
+            const bt = b1 + b1 + b2; // Total thickness
+            const d = b1 / b2; // δ
+            const fwc = (2 * le * d * fwc1 + (li * fci)) / (grd * (1 + 2 * d));
+            const Ewc = 1300 * (1 - (fwc / 5)) * fwc;
+            const G = Ewc / (2 * (1 + n));
+
+            // Tensile strength calculations
+            
+            
+            const sunthiki = false; // Αν έχει αντοχή η εσωτερική στρώση
+            let fwt;
+
+            if (sunthiki) {
+                const E1 = 1300 * (1 - (fwc1 / 5)) * fwc1;
+                const E2 = 1300 * (1 - (fci / 5)) * fci;
+                const er1 = ft / E1;
+                const er2 = ftsub / E2;
+                if (er2 >= er1) {
+                    fwt = ft;
+                } else {
+                    fwt = ((2 * b1 * E1 * er1) + b2 * ftsub) / bt;
+                }
+            } else {
+                fwt = ((2 * b1 - b2) / (2 * b1 + b2)) * ft; // Λαμβάνεται πως η εφελκυστική αντοχή της εσωτερικής στρώσης είναι 0
+            }
+
+            // Display results
+            document.getElementById('result').innerHTML = `
+                <h5 class="card-title">Συνολικά Αποτελέσματα</h5>
+                <p>Η θλιπτική αντοχή μιας στρώσης της τοιχοποιίας (f<sub>wc1</sub>): <span class="result-value">${fwc1.toFixed(4)} MPa</span></p>
+                <p>Συνολικό πάχος τοιχοποιίας (b<sub>t</sub>): <span class="result-value">${bt.toFixed(2)} cm</span></p>
+                <p>Θλιπτική αντοχή τρίστρωτης τοιχοποιίας (f<sub>wc</sub>): <span class="result-value">${fwc.toFixed(4)} MPa</span></p>
+                <p>Μέτρο ελαστικότητας τοιχοποιίας (E<sub>wc</sub>): <span class="result-value">${Ewc.toFixed(4)} MPa</span></p>
+                <p>Μέτρο διάτμησης τοιχοποιίας (G): <span class="result-value">${G.toFixed(4)} MPa</span></p>
+                <p>Εφελκυστική αντοχή τοιχοποιίας (f<sub>wt</sub>): <span class="result-value">${fwt.toFixed(4)} MPa</span></p>
+            `;
+        }
+
+        // Add event listener to the calculate button
+        document.getElementById('calculate-button').addEventListener('click', calculate);
+    </script>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
