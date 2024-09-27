@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Structural Toolkit</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Lineal</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+
+
+            <li class="nav-item">
+                <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Concrete</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="rc_roph.html">
+                          <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Μονός Οπλισμός</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="rc_roph_diplos.html">
+                          <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Διπλός Οπλισμός</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="rc_roph_enisxush_katw.html">
+                          <i class="bi bi-circle"></i><span>Υπολογισμός Ροπής-Ενίσχυση Κάτω Παρειάς </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="syntheta_elasmata.html">
+                          <i class="bi bi-circle"></i><span>Σύνθετα Ελάσματα</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="syntheta_ufasmata.html" class="active">
+                          <i class="bi bi-circle"></i><span>Σύνθετα Υφάσματα</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="perisfijh_upo.html">
+                          <i class="bi bi-circle"></i><span>Περίσφιξη με Σύνθετα Υφάσματα Υποστυλώματος</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="agkurwseis.html">
+                          <i class="bi bi-circle"></i><span>Αγκυρώσεις οπλισμού δοκών</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="As_oplismwn.html">
+                          <i class="bi bi-circle"></i><span>Υπολογισμός As οπλισμών</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="drash_blhtrou.html">
+                          <i class="bi bi-circle"></i><span>Δράση βλήτρου </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="prometrisi_3pleurhsdokou.html" >
+                          <i class="bi bi-circle"></i><span>Προμέτρηση μανδύα δοκού</span>
+                        </a>
+                      </li>
+        
+                </ul>
+            </li><!-- End Forms Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms1-nav" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Masonry</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms1-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="antoxh_tristrwths_toixopoias.html">
+                      <i class="bi bi-circle"></i><span>Αντοχή τρίστρωτης και μονόστρωτης τοιχοποιίας</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="omogenopoihsh.html">
+                      <i class="bi bi-circle"></i><span>Ενίσχυση τοιχοποιίας με ομογενοποιήση</span>
+                    </a>
+                  </li>
+                </ul>
+              </li><!-- End Forms Nav -->
+              <li class="nav-item"></li>
+                <a class="nav-link collapsed" data-bs-target="#forms2-nav" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Timber</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms2-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="ksulino_patwma.html">
+                      <i class="bi bi-circle"></i><span>Υπολογισμός ξύλινου πατώματος</span>
+                    </a>
+                  </li>
+                </ul>
+              </li><!-- End Forms Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="tables-data_antoxes concrete.html">
+                      <i class="bi bi-circle"></i><span>Concrete Categories</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="tables-data_antoxestimber.html">
+                      <i class="bi bi-circle"></i><span>Timber Categories</span>
+                    </a>
+                  </li>
+                </ul>
+              </li><!-- End Tables Nav -->
+            </ul>
+        
+          </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Σύνθετα Υλικά-Υφάσματα</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Applications</li>
+                    <li class="breadcrumb-item active">Σύνθετα Υλικά-Υφάσματα</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <h5 class="card-title">Material Characteristics</h5>
+
+                            <!-- Material Characteristics Form -->
+                            <form id="material-properties">
+                                <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="fy" class="col-form-label">Αντοχή Χάλυβα
+                                                (MPa)</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="fy" name="fy">
+                                                <option value="235">S235</option>
+                                                <option value="275" selected>S275</option>
+                                                <option value="355">S355</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="Ε" class="col-form-label">Μέτρο Ελαστικότητας
+                                                Ε:</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="Ε" value="210000">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="G" class="col-form-label">Μέτρο Διάτμησης
+                                                </label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="G" value="81000">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="gmo" class="col-form-label">Συντελεστής γμο</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="gmo" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="gm1" class="col-form-label">Συντελεστής γμ1</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="gm1" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="kathgoria" class="col-form-label">Κατηγορία Διατομής</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="kathgoria" name="kathgoria">
+                                                <option value="IPE">IPE</option>
+                                                <option value="HEA" selected>HEA</option>
+                                                <option value="HEB">HEB</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- End Material Characteristics Form -->
+
+                            <h5 class="card-title">Περί Μέλους</h5>
+
+                            <!-- Section Characteristics Form -->
+                            <form id="section-properties">
+                                <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="L" class="col-form-label">Μήκος δοκού L (m)</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="L" value="5">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="g1" class="col-form-label">Μόνιμο κατανεμημένο φορτίο πέρα από το ι.β (KN/m)</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="g1" value="30">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="q" class="col-form-label">Κινητό κατανεμημένο φορτίο (KN/m)</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="q" value="20">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- End Section Characteristics Form -->
+
+                            <h5 class="card-title">Στρεπτοκαμπτικός λυγισμός</h5>
+
+                            <!-- Reinforcement Form -->
+                            <form id="reinforcement-properties">
+                                <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="k" class="col-form-label">k</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="k" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="kw" class="col-form-label">kw</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="kw" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="C1" class="col-form-label">C1</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="C1" value="1.132">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="C2" class="col-form-label">C2</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="C2" value="0.459">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="C3" class="col-form-label">C3</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="C3" value="0.525">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <h5 class="card-title">Οριακή Κατάσταση Λειτουργικότητας</h5>
+
+                            <!-- Reinforcement Form -->
+                            <form id="leitourgikothta-properties">
+                                <div class="mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="logos_dmax" class="col-form-label">logos_dmax</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="logos_dmax" value="250">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-4">
+                                            <label for="logos_d2" class="col-form-label">logos_d2</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" id="logos_d2" value="300">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                            
+
+                            <!-- Calculate Button -->
+                            <div class="row align-items-center">
+                                <div class="col-sm-2">
+                                    <button type="button" id="calculate-button"
+                                        class="btn btn-primary">Calculate</button>
+                                </div>
+                            </div>
+
+                            <!-- Result Display -->
+                            <div id="result" class="mt-4"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            
+        </div>
+        <div class="credits">
+            
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/calculations/calculate_rc_beam.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JS for Calculation -->
+    <script>
+ function calculate() {
+    const fy = parseFloat(document.getElementById('fy').value) / 1000;
+    const E = parseFloat(document.getElementById('Ε').value);
+    const G = parseFloat(document.getElementById('G').value);
+    const gmo = parseFloat(document.getElementById('gmo').value);
+    const gm1 = parseFloat(document.getElementById('gm1').value);
+    const kathgoria = document.getElementById('kathgoria').value;
+    const L = parseFloat(document.getElementById('L').value);
+    const g1 = parseFloat(document.getElementById('g1').value);
+    const q = parseFloat(document.getElementById('q').value);
+    const k = parseFloat(document.getElementById('k').value);
+    const kw = parseFloat(document.getElementById('kw').value);
+    const C1 = parseFloat(document.getElementById('C1').value);
+    const C2 = parseFloat(document.getElementById('C2').value);
+    const C3 = parseFloat(document.getElementById('C3').value);
+    const logos_dmax = parseFloat(document.getElementById('logos_dmax').value);
+    const logos_d2 = parseFloat(document.getElementById('logos_d2').value);
+
+    // Section Library for IPE only (expand for HEA/HEB as needed)
+    const section_IPE = ["IPE80", "IPE100", "IPE120"];
+    const table_IPE = [
+        [8, 4.6000, 0.3800, 0.5200, 0.5000, 6, 0.3280, 7.6400, 3.5800, 4.7800, 80.1400, 3.2400, 20.0300, 23.2200, 8.4890, 1.0500, 3.6910, 5.8180, 0.6727, 1.7700, 115.1000, 13.5200],
+        [10, 5.5000, 0.4100, 0.5700, 0.7000, 8.1000, 0.4000, 10.3200, 5.0800, 6.2700, 171, 4.0700, 34.2000, 39.4100, 15.9200, 1.2400, 5.7890, 9.1460, 1.1530, 2.8120, 342.1000, 26.6800],
+        [12, 6.4000, 0.4400, 0.6300, 0.7000, 10.4000, 0.4750, 13.2100, 6.3100, 8.0600, 317.8000, 4.9000, 52.9600, 60.7300, 27.6700, 1.4500, 8.6460, 13.5800, 1.6890, 3.8390, 872, 48.3400]
+    ];
+
+    let ded, diatomes;
+    if (kathgoria === "IPE") {
+        ded = table_IPE;  // in cm
+        diatomes = section_IPE;
+    } else {
+        alert('Only IPE is currently supported.');
+        return;
+    }
+
+    // Calculating Loads for beam 1.35G + 1.5Q
+    let G1 = [], Q_vals = [], Load = [], Med = [], Ved = [], L1 = [];
+    for (let i = 0; i < ded.length; i++) {
+        G1[i] = g1 + (ded[i][5] / 100);
+        Q_vals[i] = q;
+        Load[i] = 1.35 * G1[i] + 1.5 * Q_vals[i];
+        Med[i] = Load[i] * (L ** 2) / 8;
+        Ved[i] = Load[i] * L / 2;
+        L1[i] = L;
+    }
+
+    // Deflection Check
+    let dokl = [], l_dmax = [], dd2 = [], l_d2 = [], results_par = [];
+    for (let i = 0; i < ded.length; i++) {
+        dokl[i] = 5 * G1[i] * ((L * 100) ** 4) / (384 * E * 10 * ded[i][10]);
+        l_dmax[i] = dokl[i] / (L * 100 / logos_dmax);
+        dd2[i] = 5 * Q_vals[i] * ((L * 100) ** 4) / (384 * E * 10 * ded[i][10]);
+        l_d2[i] = dd2[i] / (L * 100 / logos_d2);
+        results_par[i] = (l_dmax[i] <= 1 && l_d2[i] <= 1) ? "PASS" : "FAILED";
+    }
+
+    // Strength Calculations for the Cross-section
+    let Mcrd = [], lmcrd = [], Av = [], Vcrd = [], lvcrd = [], results_antoxwn_d = [];
+    for (let i = 0; i < ded.length; i++) {
+        Mcrd[i] = ded[i][13] * fy / gmo;
+        lmcrd[i] = Med[i] / Mcrd[i];
+
+        let value1 = ded[i][7] - (2 * ded[i][1] * ded[i][3]) + (ded[i][3] * (ded[i][2] + 2 * ded[i][4]));
+        let value2 = (ded[i][0] - 2 * (ded[i][3] + ded[i][4])) * ded[i][2];
+
+        Av[i] = Math.max(value1, value2);
+        Vcrd[i] = 100 * Av[i] * (fy / Math.sqrt(3)) / gmo;
+        lvcrd[i] = Ved[i] / Vcrd[i];
+
+        results_antoxwn_d[i] = (lmcrd[i] <= 1 && lvcrd[i] <= 1) ? "PASS" : "FAILED";
+    }
+
+    // Lateral-Torsional Buckling Check
+    let Mcr = [], llt = [], alt = [], flt = [], xlt = [], Mbrd = [], lmbrd = [], results_antoxwn_melous = [];
+    for (let i = 0; i < ded.length; i++) {
+        let value4 = C1 * Math.PI ** 2 * E * 0.1 * ded[i][14] / (k * (L * 100) ** 2);
+        let value5 = Math.sqrt(((k / kw) ** 2 * (ded[i][20] / ded[i][14])) + ((k * L * 100) ** 2 * G * ded[i][18] / (Math.PI ** 2 * E * ded[i][14])));
+        Mcr[i] = value5 * value4 / 100;
+
+        llt[i] = Math.sqrt((ded[i][13] / 2) * fy / Mcr[i]);
+        alt[i] = (ded[i][0] / ded[i][1] <= 2) ? 0.21 : 0.34;
+
+        flt[i] = (1 + alt[i] * (llt[i] - 0.2) + llt[i] ** 2) / 2;
+        xlt[i] = 1 / (flt[i] + Math.sqrt(flt[i] ** 2 - llt[i] ** 2));
+
+        Mbrd[i] = xlt[i] * fy * ded[i][14] / gm1;
+        lmbrd[i] = Med[i] / Mbrd[i];
+
+        results_antoxwn_melous[i] = (lmbrd[i] >= 1) ? "FAILED" : "PASS";
+    }
+
+    // Final Summary
+    let results_antoxwn_sugkentrwtika = [], l_sugkentrwtika = [];
+    for (let i = 0; i < ded.length; i++) {
+        results_antoxwn_sugkentrwtika[i] = (results_antoxwn_melous[i] === "PASS" && results_antoxwn_d[i] === "PASS") ? "PASS" : "FAILED";
+        l_sugkentrwtika[i] = Math.max(lmbrd[i], lmcrd[i], lvcrd[i]);
+    }
+
+    // Compile results into tables and display them
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';  // Clear previous results
+
+    // Create Deflection Check Results Table
+    let deflectionTable = `<h5>Deflection Check Results</h5><table class="table table-bordered"><thead><tr><th>Section</th><th>l_dmax</th><th>l_d2</th><th>Result</th></tr></thead><tbody>`;
+    for (let i = 0; i < diatomes.length; i++) {
+        deflectionTable += `<tr><td>${diatomes[i]}</td><td>${l_dmax[i].toFixed(2)}</td><td>${l_d2[i].toFixed(2)}</td><td>${results_par[i]}</td></tr>`;
+    }
+    deflectionTable += '</tbody></table>';
+    resultDiv.innerHTML += deflectionTable;
+
+    // Cross-section Strength Results Table
+    let crossSectionTable = `<h5>Cross-section Strength Results</h5><table class="table table-bordered"><thead><tr><th>Section</th><th>Mcrd</th><th>lmcrd</th><th>Vcrd</th><th>lvcrd</th><th>Result</th></tr></thead><tbody>`;
+    for (let i = 0; i < diatomes.length; i++) {
+        crossSectionTable += `<tr><td>${diatomes[i]}</td><td>${Mcrd[i].toFixed(2)}</td><td>${lmcrd[i].toFixed(2)}</td><td>${Vcrd[i].toFixed(2)}</td><td>${lvcrd[i].toFixed(2)}</td><td>${results_antoxwn_d[i]}</td></tr>`;
+    }
+    crossSectionTable += '</tbody></table>';
+    resultDiv.innerHTML += crossSectionTable;
+
+    // Lateral-Torsional Buckling Results Table
+    let bucklingTable = `<h5>Lateral-Torsional Buckling Results</h5><table class="table table-bordered"><thead><tr><th>Section</th><th>Mcr</th><th>llt</th><th>alt</th><th>flt</th><th>xlt</th><th>Mbrd</th><th>lmbrd</th><th>Result</th></tr></thead><tbody>`;
+    for (let i = 0; i < diatomes.length; i++) {
+        bucklingTable += `<tr><td>${diatomes[i]}</td><td>${Mcr[i].toFixed(2)}</td><td>${llt[i].toFixed(2)}</td><td>${alt[i].toFixed(2)}</td><td>${flt[i].toFixed(2)}</td><td>${xlt[i].toFixed(2)}</td><td>${Mbrd[i].toFixed(2)}</td><td>${lmbrd[i].toFixed(2)}</td><td>${results_antoxwn_melous[i]}</td></tr>`;
+    }
+    bucklingTable += '</tbody></table>';
+    resultDiv.innerHTML += bucklingTable;
+
+    // Final Summary Table
+    let finalSummaryTable = `<h5>Final Summary</h5><table class="table table-bordered"><thead><tr><th>Section</th><th>Mcrd</th><th>lmcrd</th><th>Vcrd</th><th>lvcrd</th><th>Mbrd</th><th>lmbrd</th><th>Result</th><th>l_sugkentrwtika</th></tr></thead><tbody>`;
+    for (let i = 0; i < diatomes.length; i++) {
+        finalSummaryTable += `<tr><td>${diatomes[i]}</td><td>${Mcrd[i].toFixed(2)}</td><td>${lmcrd[i].toFixed(2)}</td><td>${Vcrd[i].toFixed(2)}</td><td>${lvcrd[i].toFixed(2)}</td><td>${Mbrd[i].toFixed(2)}</td><td>${lmbrd[i].toFixed(2)}</td><td>${results_antoxwn_sugkentrwtika[i]}</td><td>${l_sugkentrwtika[i].toFixed(2)}</td></tr>`;
+    }
+    finalSummaryTable += '</tbody></table>';
+    resultDiv.innerHTML += finalSummaryTable;
+}
+
+document.getElementById('calculate-button').addEventListener('click', calculate);
+
+
+    </script>
+
+</body>
+
+</html>
