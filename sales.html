@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η Δέσποινα και οι εκπτώσεις</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background: linear-gradient(to right, purple, pink);
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .form-control, .custom-select {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Η Δέσποινα και οι εκπτώσεις</h2>
+    <img src="1fe29ab3-8e5d-4410-8641-804e681c8b76.jpg" alt="Descriptive Text of Image" style="width: 300px; height: auto;">
+
+    <div class="form-group">
+        <label for="discountType">What type of discount?</label>
+        <select class="custom-select" id="discountType">
+            <option value="percentage">% off</option>
+            <option value="amount">€ off</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="originalPrice">Original price (€):</label>
+        <input type="number" id="originalPrice" class="form-control" placeholder="Enter original price">
+    </div>
+    <div class="form-group">
+        <label for="discountValue">Discount:</label>
+        <input type="number" id="discountValue" class="form-control" placeholder="Enter discount value">
+    </div>
+    <button onclick="calculateDiscount()" class="btn btn-primary">Calculate</button>
+    <h4 class="mt-4">After Discount:</h4>
+    <div>You pay: <span id="finalPrice">€0.00</span></div>
+    <div>You're saving: <span id="savedAmount">€0.00</span></div>
+</div>
+
+<script>
+function calculateDiscount() {
+    const originalPrice = parseFloat(document.getElementById('originalPrice').value);
+    const discountValue = parseFloat(document.getElementById('discountValue').value);
+    const discountType = document.getElementById('discountType').value;
+    let finalPrice = 0;
+    let savedAmount = 0;
+
+    if (discountType === 'percentage') {
+        savedAmount = originalPrice * (discountValue / 100);
+        finalPrice = originalPrice - savedAmount;
+    } else { // Euro off
+        savedAmount = discountValue;
+        finalPrice = originalPrice - discountValue;
+    }
+
+    document.getElementById('finalPrice').textContent = `€${finalPrice.toFixed(2)}`;
+    document.getElementById('savedAmount').textContent = `€${savedAmount.toFixed(2)}`;
+}
+</script>
+</body>
+</html>
