@@ -596,43 +596,56 @@ footer.footer a { color: inherit; text-decoration: underline; }
             Plotly.newPlot('pushoverPlot', [pushover, bilin], layout, { responsive: true });
         }
 
-        /** ---------- Plot: Fragility ---------- **/
-        function drawFragility(Sd_ds, betas, dt) {
-            const Sd = [];
-            for (let s = 0.5; s <= 100; s += (100 - 0.5) / 299) Sd.push(s);
-            function Phi(z) { return 0.5 * (1 + erf(z / Math.SQRT2)); }
+         /** ---------- Plot: Fragility ---------- **/
+function drawFragility(Sd_ds, betas, dt) {
+    // autoscale Sd range
+    const Sd_min = 0;
+    const Sd_max = 1.2 * Math.max(Sd_ds.DS3_g, dt); // 20% headroom
+    const N = 300;
+    const Sd = Array.from({length: N}, (_, i) =>
+        Sd_min + (Sd_max - Sd_min) * i / (N - 1)
+    );
 
-            const labels = ['DL – Damage Limitation', 'SD – Significant Damage', 'NC – Near Collapse'];
-            const keys = ['DS1_g', 'DS2_g', 'DS3_g'];
+    function Phi(z) { return 0.5 * (1 + erf(z / Math.SQRT2)); }
 
-            const traces = keys.map((k, i) => {
-                const Sd_th = Sd_ds[k];
-                const beta = betas[i];
-                const P = Sd.map(s => Phi(Math.log(s / Sd_th) / beta) * 100);
-                return {
-                    x: Sd, y: P, mode: 'lines', name: labels[i], line: { width: 2 },
-                    hovertemplate: 'δ: %{x:.3f} mm<br>P(exceed): %{y:.2f}%<extra>' + labels[i] + '</extra>'
-                };
-            });
+    const labels = ['DL – Damage Limitation', 'SD – Significant Damage', 'NC – Near Collapse'];
+    const keys = ['DS1_g', 'DS2_g', 'DS3_g'];
 
-            const layout = {
-                margin: { l: 70, r: 20, t: 20, b: 60 },
-                xaxis: { title: 'Μετακίνηση δ (mm)' },
-                yaxis: { title: 'Πιθανότητα υπέρβασης (%)', range: [0, 100] },
-                legend: { orientation: 'v', x: 1.02, xanchor: 'left', y: 1 },
-                shapes: [{
-                    type: 'line', x0: dt, x1: dt, y0: 0, y1: 1, xref: 'x', yref: 'paper',
-                    line: { width: 2, dash: 'dash', color: 'red' }
-                }],
-                annotations: [{
-                    x: dt, y: 1.02, xref: 'x', yref: 'paper', showarrow: false, font: { size: 12, color: 'red' },
-                    text: `Performance Point (${dt.toFixed(2)} mm)`
-                }],
-                hovermode: 'closest'
-            };
+    const traces = keys.map((k, i) => {
+        const Sd_th = Sd_ds[k];
+        const beta = betas[i];
+        const P = Sd.map(s => Phi(Math.log(s / Sd_th) / beta) * 100);
+        return {
+            x: Sd,
+            y: P,
+            mode: 'lines',
+            name: labels[i],
+            line: { width: 2 },
+            hovertemplate:
+                'δ: %{x:.3f} mm<br>P(exceed): %{y:.2f}%<extra>' + labels[i] + '</extra>'
+        };
+    });
 
-            Plotly.newPlot('fragilityPlot', traces, layout, { responsive: true });
-        }
+    // layout and plotting left unchanged in your code
+    const layout = {
+        margin:{l:70,r:20,t:20,b:60},
+        xaxis:{ title:'Μετακίνηση δ (mm)', autorange:true },
+        yaxis:{ title:'Πιθανότητα υπέρβασης (%)', autorange:true },
+        legend:{orientation:'v', x:1.02, xanchor:'left', y:1},
+        shapes:[{
+          type:'line', x0:dt, x1:dt, y0:0, y1:1, xref:'x', yref:'paper',
+          line:{width:2, dash:'dash', color:'red'}
+        }],
+        annotations:[{
+          x:dt, y:1.02, xref:'x', yref:'paper', showarrow:false,
+          font:{size:12, color:'red'},
+          text:`Performance Point (${dt.toFixed(2)} mm)`
+        }],
+        hovermode:'closest'
+    };
+
+    Plotly.newPlot('fragilityPlot', traces, layout, {responsive:true});
+}
 
         /** ---------- Plot: Slopes (angle) ---------- **/
         function drawSlopes(xmid, slopes) {
