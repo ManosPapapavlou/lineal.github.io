@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pushover • N2 Bilinearization & Fragility (HTML/JS)</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { background: #f8f9fa; }
+    .card { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+    textarea.form-control { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .small-note { font-size: .9rem; color: #6c757d; }
+    .pill { padding: .35rem .6rem; border-radius: 999px; background: #f1f3f5; }
+    .table-sm td, .table-sm th { padding: .3rem .5rem; }
+    .sticky-head { position: sticky; top: 0; background: #fff; }
+    footer.footer { border-top: 1px solid #e9ecef; background: #fff; color: #6c757d; }
+    footer.footer a { color: inherit; text-decoration: underline; }
+    .results-pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .92rem; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: .5rem; padding: .75rem; }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4">
+    <div class="d-flex align-items-center mb-3">
+      <h1 class="h3 mb-0">Pushover – N2 Bilinearization & Fragility</h1>
+      <span class="ms-3 pill">units: δ in <strong>mm</strong>, V<sub>b</sub> in <strong>kN</strong></span>
+    </div>
+
+    <div class="row g-4">
+      <!-- Left: Inputs -->
+      <div class="col-lg-5">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5">Inputs</h2>
+            <div class="row g-3">
+              <div class="col-6">
+                <label class="form-label">Safety factor (grd)</label>
+                <input id="grd" type="number" step="0.01" class="form-control" value="1.5">
+              </div>
+              <div class="col-6">
+                <label class="form-label">Target displacement (dt, mm)</label>
+                <input id="dt" type="number" step="0.01" class="form-control" value="16.6">
+              </div>
+
+              <div class="col-12">
+                <label class="form-label mb-1">Betas (β<sub>DL</sub>, β<sub>SD</sub>, β<sub>NC</sub>)</label>
+                <div class="input-group">
+                  <input id="beta1" type="number" step="0.001" class="form-control" value="0.2">
+                  <input id="beta2" type="number" step="0.001" class="form-control" value="0.4">
+                  <input id="beta3" type="number" step="0.001" class="form-control" value="0.6">
+                </div>
+                <div class="small-note mt-1">Lognormal dispersion parameters for DL / SD / NC.</div>
+              </div>
+
+              <!-- Two separate columns -->
+              <div class="col-6">
+                <label class="form-label">Displacements δ (mm)</label>
+                <textarea id="dispCol" rows="12" class="form-control" spellcheck="false">0
+0.07065
+0.1413
+0.212
+0.2972
+0.3825
+0.4678
+0.5532
+0.6387
+0.7241
+0.8096
+0.895
+0.9805
+1.066
+1.151
+1.237
+1.322
+1.408
+1.493
+1.579
+1.664
+1.749
+1.835
+1.92
+2.006
+2.091
+2.176
+2.262
+2.343
+2.423
+2.504
+2.625
+2.745
+2.865
+2.986
+3.111
+3.236
+3.365
+3.494
+3.621
+3.748
+3.874
+4
+4.125
+4.249
+4.373
+4.497
+4.615
+4.733
+4.842
+4.951
+5.059
+5.168
+5.275
+5.383
+5.589
+5.792
+5.993
+6.199
+6.413
+6.629
+6.849
+7.08
+7.32
+7.562
+7.806
+8.051
+8.298
+8.544
+8.799
+9.053
+9.316
+9.584
+9.859
+10.14
+10.43
+10.71
+11
+11.29
+11.58
+11.85
+12.11
+12.68
+12.97
+13.27
+13.6
+13.93
+14.28
+14.63
+14.99
+15.36
+15.73
+15.92
+16.31
+16.71
+17.13
+17.55
+17.95
+18.36
+18.76
+19.17
+19.58
+19.99
+20.39
+20.8
+21.21
+21.62
+22.02
+22.43
+22.84
+23.24
+23.67
+24.1
+24.51</textarea>
+                <div class="small-note mt-1">One value per line (commas/spaces/tabs also accepted).</div>
+              </div>
+
+              <div class="col-6">
+                <label class="form-label">Forces V<sub>b</sub> (kN)</label>
+                <textarea id="forceCol" rows="12" class="form-control" spellcheck="false">0
+9.855
+19.71
+29.57
+38.59
+47.62
+56.65
+66.08
+75.52
+84.95
+94.38
+103.8
+113.2
+122.7
+132.1
+141.5
+150.9
+160.4
+169.8
+179.2
+188.6
+198.1
+207.5
+216.9
+226.3
+235.7
+245.1
+254.5
+263.1
+271.6
+280.2
+291.9
+303.6
+315.1
+326.6
+338.1
+349.7
+361.2
+372.8
+384
+395.1
+406.1
+417
+427.4
+437.8
+448
+458.1
+467.5
+476.8
+484.5
+492.1
+499.2
+506.3
+512.9
+519.5
+529.5
+539.3
+547.6
+555.1
+561.8
+567.5
+573
+577.8
+582.2
+586.3
+589.9
+593.3
+596.4
+599.4
+602.1
+604.7
+607
+609.3
+611.4
+613.3
+615.1
+616.7
+618
+619
+619.7
+620
+620.1
+620.1
+619.9
+619.7
+619.2
+618.5
+617.5
+616.6
+615.5
+614.3
+613
+612.3
+610.9
+609.3
+607.6
+605.6
+603.5
+601.5
+599.6
+597.6
+595.7
+593.7
+591.8
+589.9
+588
+586.1
+584.2
+582.3
+580.4
+578.5
+576.7
+574.7
+572.7</textarea>
+                <div class="small-note mt-1">If lengths differ, the shorter list is used.</div>
+              </div>
+
+              <!-- Manual DS by IDs -->
+              <div class="col-12 mt-2">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="useDsIds">
+                  <label class="form-check-label" for="useDsIds">Use DS by point IDs (override auto)</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row g-2">
+                  <div class="col-4">
+                    <label class="form-label">DS1 ID</label>
+                    <input id="ds1_id" type="number" min="1" step="1" class="form-control" placeholder="e.g., 20">
+                  </div>
+                  <div class="col-4">
+                    <label class="form-label">DS2 ID</label>
+                    <input id="ds2_id" type="number" min="1" step="1" class="form-control" placeholder="e.g., 60">
+                  </div>
+                  <div class="col-4">
+                    <label class="form-label">DS3 ID</label>
+                    <input id="ds3_id" type="number" min="1" step="1" class="form-control" placeholder="e.g., 100">
+                  </div>
+                </div>
+                <div class="small-note mt-1">IDs refer to rows in the points table (first row = ID 1).
+                  If blank, DS are auto from N2 (DS1=dy, DS3=du, DS2=mid).</div>
+              </div>
+
+              <!-- Choose last point for N2 (du) -->
+              <div class="col-12 mt-2">
+                <label class="form-label">Last point ID for N2 (du)</label>
+                <input id="last_id" type="number" min="1" step="1" class="form-control" placeholder="e.g., 120">
+                <div class="small-note mt-1">
+                  If set, the bilinear equal-area closes at this point (ID from the table). Leave blank to use the very last row.
+                </div>
+              </div>
+
+              <div class="col-12 d-grid gap-2">
+                <button id="computeBtn" class="btn btn-primary btn-lg">Compute</button>
+                <button id="downloadBtn" class="btn btn-outline-secondary">Download Results (JSON)</button>
+              </div>
+            </div>
+
+            <hr class="my-4">
+            <h2 class="h6 text-uppercase text-muted">Computed (mm)</h2>
+            <div class="card mt-4">
+              <div class="card-body">
+                <h2 class="h6 mb-3">N2 Results</h2>
+                <pre id="resultsOut" class="results-pre mb-0">—</pre>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-4">
+                <div class="form-floating">
+                  <input id="ds1_raw" class="form-control" readonly>
+                  <label>DS1 (dy)</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-floating">
+                  <input id="ds2_raw" class="form-control" readonly>
+                  <label>DS2 (mean)</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-floating">
+                  <input id="ds3_raw" class="form-control" readonly>
+                  <label>DS3 (du)</label>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="form-floating">
+                  <input id="ds1_g" class="form-control" readonly>
+                  <label>DS1_g</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-floating">
+                  <input id="ds2_g" class="form-control" readonly>
+                  <label>DS2_g</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-floating">
+                  <input id="ds3_g" class="form-control" readonly>
+                  <label>DS3_g</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Points table -->
+        <div class="card mt-4">
+          <div class="card-body">
+            <h2 class="h6 mb-3">Points Table</h2>
+            <div class="table-responsive" style="max-height: 360px; overflow:auto;">
+              <table class="table table-sm table-striped align-middle mb-0" id="pointsTable">
+                <thead class="sticky-head">
+                  <tr>
+                    <th>ID</th>
+                    <th>δ (mm)</th>
+                    <th>V<sub>b</sub> (kN)</th>
+                    <th>Slope to prev (kN/mm)</th>
+                    <th>(Vbmax − Vb)/Vbmax (%)</th>
+                  </tr>
+                </thead>
+                <tbody><!-- filled dynamically --></tbody>
+              </table>
+            </div>
+            <div class="small-note mt-2">Slope at row i≥2 is
+              (V<sub>b,i</sub>−V<sub>b,i−1</sub>)/(δ<sub>i</sub>−δ<sub>i−1</sub>); first row blank.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Charts -->
+      <div class="col-lg-7">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Pushover curve & N2 Bilinear + DS</h2>
+            <div id="pushoverPlot" style="height:420px;"></div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Fragility Curves</h2>
+            <div id="fragilityPlot" style="height:420px;"></div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Slope dV<sub>b</sub>/dδ vs Displacement</h2>
+            <div id="anglePlot" style="height:420px;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3">(Vbmax − Vb) / Vbmax (%)</h2>
+            <div id="percentPlot" style="height:420px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-5 py-3">
+    <div class="container text-center small">
+      Pushover (N2) • <b>Manos Papapavlou</b><span id="year"></span>
+    </div>
+  </footer>
+
+  <script>
+    /** ---------- Helpers ---------- **/
+    const EPS = 1e-12;
+
+    function parseColumn(text) {
+      return text.split(/\r?\n/).map(r => r.trim()).filter(Boolean)
+        .map(line => line.split(/[,\t ]+/)).flat()
+        .map(s => s.replace(',', '.')).map(Number)
+        .filter(v => Number.isFinite(v));
+    }
+    function parseKampFromTwoCols(dispText, forceText) {
+      const x0 = parseColumn(dispText);
+      const y0 = parseColumn(forceText);
+      const n = Math.min(x0.length, y0.length);
+      const x = x0.slice(0, n);
+      const y = y0.slice(0, n);
+      if (n < 2) return { x: [], y: [] };
+      const idx = [...x.keys()].sort((a, b) => x[a] - x[b]);
+      return { x: idx.map(i => x[i]), y: idx.map(i => y[i]) };
+    }
+    // trapezoid area up to given last index
+    function trapz(x, y, lastIdxInclusive) {
+      let A = 0;
+      for (let i = 1; i <= lastIdxInclusive; i++) {
+        const dx = x[i] - x[i - 1];
+        A += 0.5 * (y[i] + y[i - 1]) * dx;
+      }
+      return A;
+    }
+    // full-array trapezoid
+    function trapezoidArea(x, y) { return trapz(x, y, x.length - 1); }
+    function erf(z) {
+      const sign = z < 0 ? -1 : 1;
+      z = Math.abs(z);
+      const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
+      const p = 0.3275911;
+      const t = 1 / (1 + p * z);
+      const y = 1 - ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-z * z);
+      return sign * y;
+    }
+    function fmt3(v) { return Number.isFinite(v) ? Number(v).toFixed(3) : ''; }
+
+    /** Slopes and mid-δ for plotting **/
+    function segmentSlopes(x, y) {
+      const slopes = [], xmid = [];
+      for (let i = 1; i < x.length; i++) {
+        const dx = x[i] - x[i - 1];
+        const dy = y[i] - y[i - 1];
+        slopes.push(dx !== 0 ? dy / dx : null);
+        xmid.push(0.5 * (x[i] + x[i - 1]));
+      }
+      return { slopes, xmid };
+    }
+    function cummax(arr) {
+      const out = new Array(arr.length);
+      let m = -Infinity;
+      for (let i = 0; i < arr.length; i++) { m = Math.max(m, arr[i]); out[i] = m; }
+      return out;
+    }
+    function uniqueStableXY(x, y) {
+      const ux = [], uy = [];
+      let first = true, last;
+      for (let i = 0; i < x.length; i++) {
+        if (first || x[i] !== last) { ux.push(x[i]); uy.push(y[i]); last = x[i]; first = false; }
+      }
+      return { x: ux, y: uy };
+    }
+    function interp1Monotonic(xa, ya, xq) {
+      const n = xa.length;
+      if (n === 0) return NaN;
+      if (n === 1) return ya[0];
+      if (xq <= xa[0]) {
+        const t = (xq - xa[0]) / Math.max(xa[1] - xa[0], EPS);
+        return ya[0] + t * (ya[1] - ya[0]);
+      }
+      if (xq >= xa[n - 1]) {
+        const t = (xq - xa[n - 2]) / Math.max(xa[n - 1] - xa[n - 2], EPS);
+        return ya[n - 2] + t * (ya[n - 1] - ya[n - 2]);
+      }
+      let lo = 0, hi = n - 1;
+      while (hi - lo > 1) {
+        const mid = (lo + hi) >> 1;
+        if (xa[mid] <= xq) lo = mid; else hi = mid;
+      }
+      const t = (xq - xa[lo]) / Math.max(xa[hi] - xa[lo], EPS);
+      return ya[lo] + t * (ya[hi] - ya[lo]);
+    }
+    function bracketOrNull(f, a, b) {
+      const fa = f(a), fb = f(b);
+      if (fa === 0 || fb === 0) return { a, b, fa, fb };
+      if (fa * fb < 0) return { a, b, fa, fb };
+      return null;
+    }
+    function bisection(f, a, b, maxIter = 120, tol = 1e-10) {
+      let fa = f(a), fb = f(b);
+      if (fa * fb > 0) return null;
+      for (let i = 0; i < maxIter; i++) {
+        const m = 0.5 * (a + b), fm = f(m);
+        if (Math.abs(fm) < tol) return m;
+        if (fa * fm < 0) { b = m; fb = fm; } else { a = m; fa = fm; }
+      }
+      return 0.5 * (a + b);
+    }
+    function goldenMinAbs(f, a, b, tol = 1e-10, maxIter = 250) {
+      const gr = (Math.sqrt(5) - 1) / 2;
+      let c = b - gr * (b - a);
+      let d = a + gr * (b - a);
+      let fc = Math.abs(f(c)), fd = Math.abs(f(d));
+      for (let i = 0; i < maxIter && (b - a) > tol; i++) {
+        if (fc > fd) { a = c; c = d; fc = fd; d = a + gr * (b - a); fd = Math.abs(f(d)); }
+        else { b = d; d = c; fd = fc; c = b - gr * (b - a); fc = Math.abs(f(c)); }
+      }
+      return 0.5 * (a + b);
+    }
+
+    /** ---------- N2 core (equal-energy up to du, Ke from 60%Fy secant, envelope on) ---------- **/
+    function n2_bilinearize(Delta, V, options = {}) {
+      const lastIdOpt = Number.isInteger(options.lastId) ? options.lastId : null;
+
+      // Always: use_cummax=true
+      const N = Math.min(Delta.length, V.length);
+      Delta = Delta.slice(0, N);
+      V = V.slice(0, N);
+
+      // Sort ascending by Delta
+      const idx = [...Delta.keys()].sort((i, j) => Delta[i] - Delta[j]);
+      Delta = idx.map(i => Delta[i]);
+      V = idx.map(i => V[i]);
+
+      // Envelope (cummax)
+      const Venv = cummax(V);
+      const Vmax = Math.max(...Venv);
+
+      // du selection: from lastId if valid, else last Δ
+      let du = Delta[Delta.length - 1];
+      if (Number.isInteger(lastIdOpt) && lastIdOpt >= 1 && lastIdOpt <= Delta.length) {
+        du = Delta[lastIdOpt - 1];
+      }
+
+      // Crop to du
+      const mask = Delta.map((d, i) => d <= du ? i : -1).filter(i => i !== -1);
+      const Du = mask.map(i => Delta[i]);
+      const Vu_env = mask.map(i => Venv[i]);
+
+      // Area of actual (enveloped) up to du
+      const areaActual = trapezoidArea(Du, Vu_env);
+
+      // Prepare inverse Δ(V) from unique (monotone) Vu_env
+      const uniq = uniqueStableXY(Vu_env, Du);
+      const deltaAtV = (Vt) => interp1Monotonic(uniq.x, uniq.y, Vt);
+
+      // Root function g(Fy) = area_bilinear(Fy) - areaActual
+      const g = (Fy) => {
+        const D06 = Math.max(deltaAtV(0.6 * Fy), EPS);
+        const Ke = (0.6 * Fy) / D06;
+        const dy = Fy / Math.max(Ke, EPS);
+        const areaBi = 0.5 * Ke * dy * dy + Fy * Math.max(du - dy, 0);
+        return areaBi - areaActual;
+      };
+
+      // Solve for Fy
+      let lo = 0.5 * Vmax, hi = Vmax;
+      let br = bracketOrNull(g, lo, hi);
+      if (!br) {
+        for (const f of [0.4, 0.3, 0.25, 0.2]) {
+          lo = f * Vmax; br = bracketOrNull(g, lo, hi); if (br) break;
+        }
+      }
+      let Fy = br ? bisection(g, lo, hi, 200, 1e-10) : goldenMinAbs(g, 0.2 * Vmax, Vmax, 1e-10, 250);
+
+      // Ke, dy, bilinear
+      const D06 = Math.max(deltaAtV(0.6 * Fy), EPS);
+      const Ke = (0.6 * Fy) / D06;
+      const dy = Fy / Math.max(Ke, EPS);
+
+      const x_bi = [0, dy, du];
+      const y_bi = [0, Fy, Fy];
+
+      const areaBi = 0.5 * Ke * dy * dy + Fy * Math.max(du - dy, 0);
+      const relErr = (areaBi - areaActual) / Math.max(areaActual, EPS);
+
+      return {
+        bilin: x_bi.map((xv, i) => ({ x: xv, y: y_bi[i] })),
+        Fy, dy, Ke, du,
+        area_actual: areaActual, area_bilinear: areaBi, rel_area_err: relErr,
+        DeltaSorted: Delta, VrawSorted: V, Venv,
+        lastIdUsed: (Number.isInteger(lastIdOpt) && lastIdOpt >= 1 && lastIdOpt <= Delta.length) ? lastIdOpt : null
+      };
+    }
+
+    /** ---------- Core compute ---------- **/
+    function computeAll() {
+      const grd = Number(document.getElementById('grd').value);
+      const dt = Number(document.getElementById('dt').value);
+      const betas = [
+        Number(document.getElementById('beta1').value),
+        Number(document.getElementById('beta2').value),
+        Number(document.getElementById('beta3').value)
+      ];
+
+      const { x, y } = parseKampFromTwoCols(
+        document.getElementById('dispCol').value,
+        document.getElementById('forceCol').value
+      );
+      if (x.length < 3) { alert('Please provide at least 3 rows in both columns.'); return; }
+
+      // Table helpers
+      const { slopes, xmid } = segmentSlopes(x, y);
+      const yMax = y.reduce((m, v) => Math.max(m, v), -Infinity);
+      const pctDef = y.map(v => (yMax > 0 ? ((yMax - v) / yMax) * 100 : 0));
+
+      // Read last_id and validate
+      const n = x.length;
+      const last_id = parseInt(document.getElementById('last_id').value, 10);
+      const validId = k => Number.isInteger(k) && k >= 1 && k <= n;
+
+      // ----- N2 Bilinearization (with chosen last_id) -----
+      const res = n2_bilinearize(x, y, { lastId: validId(last_id) ? last_id : null });
+      const bilinear = res.bilin;
+      const dy = res.dy;
+      const du = res.du;
+      const Fy = res.Fy;
+
+      // Render N2 results
+      const resultsEl = document.getElementById('resultsOut');
+      if (resultsEl) {
+        const lines = [];
+        lines.push('--- N2 Bilinearization Results ---');
+        lines.push(`Fy   = ${Fy.toFixed(3)} kN`);
+        lines.push(`dy   = ${dy.toFixed(3)} mm`);
+        lines.push(`Ke   = ${res.Ke.toFixed(6)} kN/mm`);
+        lines.push(`du   = ${du.toFixed(3)} mm  (equal-area limit)`);
+        if (res.lastIdUsed) { lines.push(`du source     = point ID #${res.lastIdUsed}`); }
+        else { lines.push(`du source     = last row`); }
+        lines.push(`Area(actual)    = ${res.area_actual.toFixed(3)} kN·mm`);
+        lines.push(`Area(bilinear)  = ${res.area_bilinear.toFixed(3)} kN·mm`);
+        lines.push(`Rel. area error = ${res.rel_area_err.toExponential(6)}`);
+        lines.push(`Vb_max          = ${yMax.toFixed(3)} kN`);
+        resultsEl.textContent = lines.join('\n');
+      }
+
+      // ----- DS (auto, with optional override by IDs) -----
+      const useIds = document.getElementById('useDsIds').checked;
+      const ds1_id = parseInt(document.getElementById('ds1_id').value, 10);
+      const ds2_id = parseInt(document.getElementById('ds2_id').value, 10);
+      const ds3_id = parseInt(document.getElementById('ds3_id').value, 10);
+      const validId2 = k => Number.isInteger(k) && k >= 1 && k <= n;
+
+      let DS1 = dy;
+      let DS3 = du;
+      let DS2 = 0.5 * (DS1 + DS3);
+      if (useIds) {
+        if (validId2(ds1_id)) DS1 = x[ds1_id - 1];
+        if (validId2(ds3_id)) DS3 = x[ds3_id - 1];
+        DS2 = validId2(ds2_id) ? x[ds2_id - 1] : 0.5 * (DS1 + DS3);
+      }
+
+      const DS1_g = DS1 / grd, DS2_g = DS2 / grd, DS3_g = DS3 / grd;
+
+      // Update DS fields
+      document.getElementById('ds1_raw').value = fmt3(DS1);
+      document.getElementById('ds2_raw').value = fmt3(DS2);
+      document.getElementById('ds3_raw').value = fmt3(DS3);
+      document.getElementById('ds1_g').value = fmt3(DS1_g);
+      document.getElementById('ds2_g').value = fmt3(DS2_g);
+      document.getElementById('ds3_g').value = fmt3(DS3_g);
+
+      // Plots
+      drawPushover(x, y, bilinear, { DS1_g, DS2_g, DS3_g, dt });
+      drawFragility({ DS1_g, DS2_g, DS3_g }, betas, dt);
+      drawSlopes(xmid, slopes);
+      drawPercent(x, y, pctDef, yMax);
+
+      // Return results for JSON & table render
+      return {
+        inputs: { grd, dt, betas, useDsIds: useIds, ds_ids: { ds1_id, ds2_id, ds3_id }, last_id: validId(last_id) ? last_id : null },
+        summary: {
+          method: 'N2', Fy, dy, du,
+          Ke: res.Ke,
+          area_actual: res.area_actual,
+          area_bilinear: res.area_bilinear,
+          rel_area_err: res.rel_area_err,
+          Vb_max: yMax,
+          du_source: res.lastIdUsed ? `point ID #${res.lastIdUsed}` : 'last row'
+        },
+        bilinear,
+        points: x.map((xi, i) => ({
+          id: i + 1,
+          delta_mm: xi,
+          Vb_kN: y[i],
+          slope_to_prev_kN_per_mm: i ? slopes[i - 1] : null,
+          Vb_pct_deficit_of_max: pctDef[i]
+        }))
+      };
+    }
+
+    /** ---------- Table render (uses lastResults) ---------- **/
+    function renderPointsTableFromResults(results) {
+      const tbody = document.querySelector('#pointsTable tbody');
+      tbody.innerHTML = '';
+      if (results && results.points) {
+        for (const p of results.points) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${p.id}</td>
+            <td>${fmt3(p.delta_mm)}</td>
+            <td>${fmt3(p.Vb_kN)}</td>
+            <td>${p.id === 1 ? '' : fmt3(p.slope_to_prev_kN_per_mm)}</td>
+            <td>${Number.isFinite(p.Vb_pct_deficit_of_max) ? p.Vb_pct_deficit_of_max.toFixed(2) : ''}</td>
+          `;
+          tbody.appendChild(tr);
+        }
+      }
+    }
+
+    /** ---------- Plot: Pushover (MATLAB-like) ---------- **/
+    function drawPushover(x, y, bilinear, lines) {
+      const ids = x.map((_, i) => i + 1);
+      const pushover = {
+        x, y, mode: 'lines', name: 'Pushover',
+        line: { width: 1.2, color: 'blue' },
+        customdata: ids.map(id => [id]),
+        hovertemplate: 'ID: %{customdata[0]}<br>δ: %{x:.3f} mm<br>Vb: %{y:.3f} kN<extra>Pushover</extra>'
+      };
+      const bilin = {
+        x: bilinear.map(p => p.x),
+        y: bilinear.map(p => p.y),
+        mode: 'lines',
+        name: 'Bilinear (N2)',
+        line: { width: 1.5, color: 'red' },
+        hovertemplate: 'δ: %{x:.3f} mm<br>Vb: %{y:.3f} kN<extra>Bilinear (N2)</extra>'
+      };
+      const vlines = [
+        { x: lines.DS1_g, color: 'green', label: 'DS1' },
+        { x: lines.DS2_g, color: 'magenta', label: 'DS2' },
+        { x: lines.DS3_g, color: 'black', label: 'DS3' },
+        { x: lines.dt, color: 'teal', label: 'd_t' }
+      ];
+      const shapes = vlines.map(v => ({
+        type: 'line', x0: v.x, x1: v.x, y0: 0, y1: 1, xref: 'x', yref: 'paper',
+        line: { width: 2, dash: 'dash', color: v.color }
+      }));
+      const annotations = vlines.map(v => ({
+        x: v.x, y: 0.5, xref: 'x', yref: 'paper',
+        text: v.label, showarrow: false,
+        font: { size: 12, color: v.color },
+        bgcolor: 'rgba(255,255,255,0.7)', bordercolor: 'rgba(0,0,0,0)', textangle: 0
+      }));
+      const layout = {
+        margin: { l: 70, r: 20, t: 20, b: 60 },
+        xaxis: { title: 'Μετακίνηση κόμβου ελέγχου – δ (mm)', autorange: true },
+        yaxis: { title: 'Τέμνουσα Βάσης V_b (kN)', autorange: true },
+        legend: { orientation: 'h', x: 0, y: -0.2 },
+        shapes, annotations, hovermode: 'closest'
+      };
+      Plotly.newPlot('pushoverPlot', [pushover, bilin], layout, { responsive: true });
+    }
+
+    /** ---------- Plot: Fragility (auto Sd range) ---------- **/
+    function drawFragility(Sd_ds, betas, dt) {
+      const Smin = 0;
+      const Smax = 1.2 * Math.max(Sd_ds.DS3_g, dt);
+      const N = 300;
+      const Sd = Array.from({ length: N }, (_, i) => Smin + (Smax - Smin) * i / (N - 1));
+      function Phi(z) { return 0.5 * (1 + erf(z / Math.SQRT2)); }
+      const labels = ['DL – Damage Limitation', 'SD – Significant Damage', 'NC – Near Collapse'];
+      const keys = ['DS1_g', 'DS2_g', 'DS3_g'];
+      const traces = keys.map((k, i) => {
+        const Sd_th = Sd_ds[k];
+        const beta = betas[i];
+        const P = Sd.map(s => Phi(Math.log(s / Sd_th) / beta) * 100);
+        return {
+          x: Sd, y: P, mode: 'lines', name: labels[i], line: { width: 2 },
+          hovertemplate: 'δ: %{x:.3f} mm<br>P(exceed): %{y:.2f}%<extra>' + labels[i] + '</extra>'
+        };
+      });
+      const layout = {
+        margin: { l: 70, r: 20, t: 20, b: 60 },
+        xaxis: { title: 'Μετακίνηση δ (mm)', autorange: true },
+        yaxis: { title: 'Πιθανότητα υπέρβασης (%)', autorange: true },
+        legend: { orientation: 'v', x: 1.02, xanchor: 'left', y: 1 },
+        shapes: [{ type: 'line', x0: dt, x1: dt, y0: 0, y1: 1, xref: 'x', yref: 'paper', line: { width: 2, dash: 'dash' } }],
+        annotations: [{ x: dt, y: 1.02, xref: 'x', yref: 'paper', showarrow: false, font: { size: 12 }, text: `Performance Point (${dt.toFixed(2)} mm)` }],
+        hovermode: 'closest'
+      };
+      Plotly.newPlot('fragilityPlot', traces, layout, { responsive: true });
+    }
+
+    /** ---------- Plot: Slopes ---------- **/
+    function drawSlopes(xmid, slopes) {
+      const segIds = slopes.map((_, i) => i + 1);
+      const trace = {
+        x: xmid, y: slopes, mode: 'lines+markers', name: 'dVb/dδ',
+        line: { width: 2 }, marker: { size: 5 },
+        customdata: segIds.map(id => [id]),
+        hovertemplate: 'Seg ID: %{customdata[0]}<br>δ(mid): %{x:.3f} mm<br>slope: %{y:.6f} kN/mm<extra>dVb/dδ</extra>'
+      };
+      const layout = {
+        margin: { l: 70, r: 20, t: 20, b: 60 },
+        xaxis: { title: 'Μετακίνηση δ (mm)', autorange: true },
+        yaxis: { title: 'Κλίση dVb/dδ (kN/mm)', autorange: true },
+        hovermode: 'closest'
+      };
+      Plotly.newPlot('anglePlot', [trace], layout, { responsive: true });
+    }
+
+    /** ---------- Plot: Percent deficit vs Vb_max ---------- **/
+    function drawPercent(x, y, pct, yMax) {
+      const ids = x.map((_, i) => i + 1);
+      const trace = {
+        x: x, y: pct, mode: 'lines+markers', name: 'Deficit % vs Vb_max',
+        line: { width: 2 }, marker: { size: 5 },
+        customdata: ids.map((id, i) => [id, y[i]]),
+        hovertemplate: 'ID: %{customdata[0]}<br>δ: %{x:.3f} mm<br>Vb: %{customdata[1]:.3f} kN<br>deficit: %{y:.2f}%<extra>(Vbmax−Vb)/Vbmax</extra>'
+      };
+      const layout = {
+        margin: { l: 70, r: 20, t: 20, b: 60 },
+        xaxis: { title: 'Μετακίνηση δ (mm)', autorange: true },
+        yaxis: { title: '(Vbmax − Vb) / Vbmax (%)', autorange: true },
+        shapes: [{ type: 'line', x0: x[0], x1: x[x.length - 1], y0: 0, y1: 0, xref: 'x', yref: 'y', line: { width: 1, dash: 'dot' } }],
+        annotations: [{ x: x[Math.floor(x.length / 2)] || 0, y: 0, xref: 'x', yref: 'y', text: '0% at Vb = Vb_max', showarrow: false, font: { size: 12 } }],
+        hovermode: 'closest'
+      };
+      Plotly.newPlot('percentPlot', [trace], layout, { responsive: true });
+    }
+
+    /** ---------- UI wiring ---------- **/
+    let lastResults = null;
+
+    document.getElementById('computeBtn').addEventListener('click', () => {
+      try {
+        lastResults = computeAll();
+        renderPointsTableFromResults(lastResults);
+      } catch (e) {
+        console.error(e);
+        alert('Computation failed. Please check inputs.');
+      }
+    });
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      if (!lastResults) { alert('Compute first.'); return; }
+      const blob = new Blob([JSON.stringify(lastResults, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'pushover_fragility_results_n2.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    // Auto-recompute on DS ID and last_id changes
+    ['useDsIds', 'ds1_id', 'ds2_id', 'ds3_id', 'last_id'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        document.getElementById('computeBtn').click();
+      });
+    });
+
+    // On load
+    window.addEventListener('load', () => {
+      const yEl = document.getElementById('year'); if (yEl) yEl.textContent = new Date().getFullYear();
+      document.getElementById('computeBtn').click();
+    });
+  </script>
+</body>
+</html>
