@@ -326,7 +326,7 @@
                 <label class="form-label">Last point ID for N2 (du)</label>
                 <input id="last_id" type="number" min="1" step="1" class="form-control" placeholder="e.g., 120">
                 <div class="small-note mt-1">
-                  If set, the bilinear equal-area closes at this point (ID from the table). Leave blank to use the very last row.
+                  If set, all plots & table truncate at this point and the bilinear equal-area closes there. Leave blank to use the very last row.
                 </div>
               </div>
 
@@ -653,17 +653,22 @@
       );
       if (x.length < 3) { alert('Please provide at least 3 rows in both columns.'); return; }
 
-      // Table helpers
-      const { slopes, xmid } = segmentSlopes(x, y);
-      const yMax = y.reduce((m, v) => Math.max(m, v), -Infinity);
-      const pctDef = y.map(v => (yMax > 0 ? ((yMax - v) / yMax) * 100 : 0));
-
-      // Read last_id and validate
-      const n = x.length;
+      // Read last_id and validate (for plotting/table truncation + N2 du)
+      const nAll = x.length;
       const last_id = parseInt(document.getElementById('last_id').value, 10);
-      const validId = k => Number.isInteger(k) && k >= 1 && k <= n;
+      const validId = k => Number.isInteger(k) && k >= 1 && k <= nAll;
 
-      // ----- N2 Bilinearization (with chosen last_id) -----
+      // Build plotting arrays: truncate at last_id if valid
+      const nPlot = validId(last_id) ? last_id : nAll;
+      const xPlot = x.slice(0, nPlot);
+      const yPlot = y.slice(0, nPlot);
+
+      // Table helpers based on plot arrays
+      const { slopes, xmid } = segmentSlopes(xPlot, yPlot);
+      const yMax = yPlot.reduce((m, v) => Math.max(m, v), -Infinity);
+      const pctDef = yPlot.map(v => (yMax > 0 ? ((yMax - v) / yMax) * 100 : 0));
+
+      // ----- N2 Bilinearization (with chosen last_id for du) -----
       const res = n2_bilinearize(x, y, { lastId: validId(last_id) ? last_id : null });
       const bilinear = res.bilin;
       const dy = res.dy;
@@ -684,7 +689,7 @@
         lines.push(`Area(actual)    = ${res.area_actual.toFixed(3)} kN·mm`);
         lines.push(`Area(bilinear)  = ${res.area_bilinear.toFixed(3)} kN·mm`);
         lines.push(`Rel. area error = ${res.rel_area_err.toExponential(6)}`);
-        lines.push(`Vb_max          = ${yMax.toFixed(3)} kN`);
+        lines.push(`Vb_max (plot)   = ${yMax.toFixed(3)} kN`);
         resultsEl.textContent = lines.join('\n');
       }
 
@@ -693,15 +698,15 @@
       const ds1_id = parseInt(document.getElementById('ds1_id').value, 10);
       const ds2_id = parseInt(document.getElementById('ds2_id').value, 10);
       const ds3_id = parseInt(document.getElementById('ds3_id').value, 10);
-      const validId2 = k => Number.isInteger(k) && k >= 1 && k <= n;
+      const validPlotId = k => Number.isInteger(k) && k >= 1 && k <= nPlot;
 
       let DS1 = dy;
       let DS3 = du;
       let DS2 = 0.5 * (DS1 + DS3);
       if (useIds) {
-        if (validId2(ds1_id)) DS1 = x[ds1_id - 1];
-        if (validId2(ds3_id)) DS3 = x[ds3_id - 1];
-        DS2 = validId2(ds2_id) ? x[ds2_id - 1] : 0.5 * (DS1 + DS3);
+        if (validPlotId(ds1_id)) DS1 = xPlot[ds1_id - 1];
+        if (validPlotId(ds3_id)) DS3 = xPlot[ds3_id - 1];
+        DS2 = validPlotId(ds2_id) ? xPlot[ds2_id - 1] : 0.5 * (DS1 + DS3);
       }
 
       const DS1_g = DS1 / grd, DS2_g = DS2 / grd, DS3_g = DS3 / grd;
@@ -714,11 +719,11 @@
       document.getElementById('ds2_g').value = fmt3(DS2_g);
       document.getElementById('ds3_g').value = fmt3(DS3_g);
 
-      // Plots
-      drawPushover(x, y, bilinear, { DS1_g, DS2_g, DS3_g, dt });
+      // Plots (use truncated xPlot/yPlot)
+      drawPushover(xPlot, yPlot, bilinear, { DS1_g, DS2_g, DS3_g, dt });
       drawFragility({ DS1_g, DS2_g, DS3_g }, betas, dt);
       drawSlopes(xmid, slopes);
-      drawPercent(x, y, pctDef, yMax);
+      drawPercent(xPlot, yPlot, pctDef, yMax);
 
       // Return results for JSON & table render
       return {
@@ -729,14 +734,14 @@
           area_actual: res.area_actual,
           area_bilinear: res.area_bilinear,
           rel_area_err: res.rel_area_err,
-          Vb_max: yMax,
+          Vb_max_plot: yMax,
           du_source: res.lastIdUsed ? `point ID #${res.lastIdUsed}` : 'last row'
         },
         bilinear,
-        points: x.map((xi, i) => ({
+        points: xPlot.map((xi, i) => ({
           id: i + 1,
           delta_mm: xi,
-          Vb_kN: y[i],
+          Vb_kN: yPlot[i],
           slope_to_prev_kN_per_mm: i ? slopes[i - 1] : null,
           Vb_pct_deficit_of_max: pctDef[i]
         }))
@@ -766,7 +771,7 @@
     function drawPushover(x, y, bilinear, lines) {
       const ids = x.map((_, i) => i + 1);
       const pushover = {
-        x, y, mode: 'lines', name: 'Pushover',
+        x, y, mode: 'lines', name: 'Pushover (truncated)',
         line: { width: 1.2, color: 'blue' },
         customdata: ids.map(id => [id]),
         hovertemplate: 'ID: %{customdata[0]}<br>δ: %{x:.3f} mm<br>Vb: %{y:.3f} kN<extra>Pushover</extra>'
